@@ -1,0 +1,33 @@
+```{r}
+# install.packages("pheatmap")
+library(pheatmap)
+# 文件输入
+
+data <- read.table("./importance_otu_top15.tsv", header = TRUE, row.names = 1, sep = "\t")
+
+group <- read.table("./data/metadata.txt", header = TRUE, sep = "\t")
+
+# 设置group行名
+
+
+# 设置数据框annotation_col（只有一列Group，且行名为样本名）
+
+annotation_col <- data.frame(Group = factor(group$Group))
+
+rownames(annotation_col) <- group$sampleid
+
+# pheatmap(data, scale = "column", annotation_col = annotation_col)
+ann_colors <- list(
+    Group = c(AD="#ff9289", C="#00dae0")
+)
+pheatmap(log((data + 1), 2),
+        scale = "column", cluster_cols = FALSE, 
+        cluster_rows = FALSE, 
+        annotation_col = annotation_col, 
+        annotation_colors = ann_colors,
+        cellwidth = 5, cellheight = 20,
+        fontsize = 5,
+        filename = "importance_otu_top15_heatmap.pdf"
+)
+
+```

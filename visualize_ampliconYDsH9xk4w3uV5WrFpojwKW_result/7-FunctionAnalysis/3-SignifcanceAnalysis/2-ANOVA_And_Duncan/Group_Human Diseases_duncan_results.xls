@@ -1,0 +1,3 @@
+"KEGG pathway"	"Group"	"Mean"	"SE"	"Duncan significance"
+"Fluid shear stress and atherosclerosis"	"AD"	-0.305739225802167	0.0834709411755037	"b"
+"Fluid shear stress and atherosclerosis"	"C"	0.430618627890377	0.0496735970144409	"a"

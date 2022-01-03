@@ -1,0 +1,5 @@
+"KEGG pathway"	"Group"	"Mean"	"SE"	"Duncan significance"
+"Cellular Processes"	"AD"	-0.328642688146098	0.0584431314647617	"b"
+"Cellular Processes"	"C"	0.462877025557885	0.084843261782947	"a"
+"Metabolism"	"AD"	0.273067727377194	0.0718139155821738	"a"
+"Metabolism"	"C"	-0.384602432925631	0.0735393894286563	"b"

@@ -1,0 +1,133 @@
+
+```{r}
+# 读取 OTU 丰度表
+
+otu <- read.delim("./input/otu_table.tsv", row.names = 1, stringsAsFactors = FALSE)
+
+otu <- data.frame(t(otu))
+
+# 读取样本分组
+group <- read.delim("./input/metadata.txt", stringsAsFactors = FALSE)
+
+
+```
+
+```{r}
+## 使用 vegan 包的置换多元方差分析（PERMANOVA），
+# 置换多元方差分析（Permutational multivariate analysis of variance，PERMANOVA），
+# 又称非参数多因素方差分析（nonparametric multivariate analysis of variance）、或者ADONIS分析，
+# 其本质是基于F统计的方差分析，依据距离矩阵对总方差进行分解的非参数多元方差分析方法。
+# 使用PERMANOVA可分析不同分组因素对样品差异的解释度，并使用置换检验进行显著性统计。
+library(vegan)
+# 执行 PERMANOVA，详情 ?adonis
+# 样本间的成对距离选择使用物种多样性中最常使用的 Bray-curtis 距离，并通过 999 次置换估计 p 值
+adonis_bray <- adonis(otu ~ Group, group, distance = "bray", permutations = 999)
+adonis_bray
+# 为了与上文 PERMANOVA 对应起来，这里同样计算了样本间成对的 Bray-curtis 距离，详情 ?vegdist
+bray_dis <- vegdist(otu, method = "bray")
+
+# PCoA 排序，详情 ?cmdscale
+pcoa <- cmdscale(bray_dis, k = (nrow(otu) - 1), eig = TRUE)
+
+# 提取前两轴的贡献度
+pcoa_exp <- pcoa$eig / sum(pcoa$eig)
+pcoa1 <- paste("PCoA axis1 :", round(100 * pcoa_exp[1], 2), "%")
+pcoa2 <- paste("PCoA axis2 :", round(100 * pcoa_exp[2], 2), "%")
+
+# 提取前两轴的的坐标，并添加样本的分组信息
+site <- data.frame(pcoa$point)[1:2]
+site$Sample <- rownames(site)
+site <- merge(site, group, by = "Sample")
+names(site)[2:3] <- c("pcoa1", "pcoa2")
+
+# ggplot2 绘制二维平面图展示 PCoA 结果
+library(ggplot2)
+library(ggrepel)
+
+p <- ggplot(data = site) +
+    geom_point(aes(x = pcoa1, y = pcoa2, color = Group), size = 2) + # 绘制两轴的样本点
+    # geom_text_repel(aes(x = pcoa1, y = pcoa2, label = Sample, color = Group),
+    #     size = 2.5,
+    #     box.padding = unit(0.3, "lines"), show.legend = FALSE
+    # ) + # 添加样本标签
+    # scale_color_manual(limits = c("AD", "C"), values = c("#D27FB2", "#764697")) + # 两组的颜色
+    theme(
+        panel.grid = element_blank(), panel.background = element_blank(),
+        axis.line = element_line(color = "black"), legend.key = element_blank()
+    ) +
+    labs(x = pcoa1, y = pcoa2, color = "")
+
+# p
+
+# 在图中添加两组的质心（分别计算两组样本在 PCoA 两轴坐标的均值），并以中心大点显示在图中
+group_average <- aggregate(cbind(pcoa1, pcoa2) ~ Group, data = site, FUN = mean)
+
+p1 <- p +
+    stat_ellipse(aes(x = pcoa1, y = pcoa2, color = Group), level = 0.95, linetype = 2, show.legend = FALSE) + # 绘制两组的 95% 置信椭圆
+    geom_point(data = group_average, aes(x = pcoa1, y = pcoa2, color = Group), size = 5, show.legend = FALSE) # 绘制中央质心大点
+
+# 在图中添加上文的 PERMANOVA 的结果（P 值）
+p1 <- p1 +
+    annotate("text", label = "PERMANOVA", x = 0.5, y = 0.35, size = 3) +
+    annotate("text", label = sprintf("italic(P) == %.3f", adonis_bray$aov.tab[1, 6]), x = 0.5, y = 0.3, size = 3, parse = TRUE)
+
+
+ggsave("plot/beta/bray.svg", p1, width = 9, height = 5)
+```
+
+```{r}
+
+# 
+adonis_wunifrac <- adonis(otu ~ Group, group, distance = "wunifrac", permutations = 999)
+adonis_wunifrac
+# 为了与上文 PERMANOVA 对应起来，这里同样计算了样本间成对的 Bray-curtis 距离，详情 ?vegdist
+bray_dis <- vegdist(otu, method = "unifrac")
+
+# PCoA 排序，详情 ?cmdscale
+pcoa <- cmdscale(bray_dis, k = (nrow(otu) - 1), eig = TRUE)
+
+# 提取前两轴的贡献度
+pcoa_exp <- pcoa$eig / sum(pcoa$eig)
+pcoa1 <- paste("PCoA axis1 :", round(100 * pcoa_exp[1], 2), "%")
+pcoa2 <- paste("PCoA axis2 :", round(100 * pcoa_exp[2], 2), "%")
+
+# 提取前两轴的的坐标，并添加样本的分组信息
+site <- data.frame(pcoa$point)[1:2]
+site$Sample <- rownames(site)
+site <- merge(site, group, by = "Sample")
+names(site)[2:3] <- c("pcoa1", "pcoa2")
+
+# ggplot2 绘制二维平面图展示 PCoA 结果
+library(ggplot2)
+library(ggrepel)
+
+p <- ggplot(data = site) +
+    geom_point(aes(x = pcoa1, y = pcoa2, color = Group), size = 2) + # 绘制两轴的样本点
+    # geom_text_repel(aes(x = pcoa1, y = pcoa2, label = Sample, color = Group),
+    #     size = 2.5,
+    #     box.padding = unit(0.3, "lines"), show.legend = FALSE
+    # ) + # 添加样本标签
+    # scale_color_manual(limits = c("AD", "C"), values = c("#D27FB2", "#764697")) + # 两组的颜色
+    theme(
+        panel.grid = element_blank(), panel.background = element_blank(),
+        axis.line = element_line(color = "black"), legend.key = element_blank()
+    ) +
+    labs(x = pcoa1, y = pcoa2, color = "")
+
+# p
+
+# 在图中添加两组的质心（分别计算两组样本在 PCoA 两轴坐标的均值），并以中心大点显示在图中
+group_average <- aggregate(cbind(pcoa1, pcoa2) ~ Group, data = site, FUN = mean)
+
+p1 <- p +
+    stat_ellipse(aes(x = pcoa1, y = pcoa2, color = Group), level = 0.95, linetype = 2, show.legend = FALSE) + # 绘制两组的 95% 置信椭圆
+    geom_point(data = group_average, aes(x = pcoa1, y = pcoa2, color = Group), size = 5, show.legend = FALSE) # 绘制中央质心大点
+
+# 在图中添加上文的 PERMANOVA 的结果（P 值）
+p1 <- p1 +
+    annotate("text", label = "PERMANOVA", x = 0.5, y = 0.35, size = 3) +
+    annotate("text", label = sprintf("italic(P) == %.3f", adonis_bray$aov.tab[1, 6]), x = 0.5, y = 0.3, size = 3, parse = TRUE)
+
+
+ggsave("plot/beta/bray.svg", p1, width = 9, height = 5)
+```

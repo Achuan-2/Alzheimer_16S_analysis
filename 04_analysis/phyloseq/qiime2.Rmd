@@ -1,0 +1,465 @@
+
+安装包
+```{r}
+# install.packages("BiocManager")
+# install.packages("ape")
+# install_github("amplicon")
+# BiocManager::install(version = "3.14")
+# BiocManager::install("phyloseq")
+# BiocManager::install("MicrobiotaProcess")
+# install.packages("ggsci")
+# install.packages("ggpubr")
+#install.packages("UpSetR")
+# sed '1i OTU,domain,phylum,class,order,family,genus,species' taxonomy.txt | sed 's/,/\t/g'|sed 's/;/\t/g' |sed 's/[a-z]__//g'> otu_taxa.tsv
+
+```
+```{r}
+rm(list = ls())
+library(MicrobiotaProcess)
+library(phyloseq)
+library(ggplot2)
+library(ggsci)
+library(tidyverse)
+library(RColorBrewer)
+library(ape)
+library("ggpubr") # 用于事后检验标记
+
+packageVersion("MicrobiotaProcess")
+otu_mat <- read.delim2("./input/otu_table.tsv",
+    header = T,
+    sep = "\t", row.names = 1
+) 
+otu_num<-as.data.frame(lapply(otu_mat, as.numeric))
+rownames(otu_num) <- rownames(otu_mat)
+tax_mat <- read.delim("./input/taxonomy.tsv",
+    header = T, row.names = 1,na.strings="", 
+    sep = "\t", check.names = F
+) %>% as.matrix()
+tax_mat[is.na(tax_mat)] <-"Unclassified"
+
+samples_df <- read.delim("./input/metadata.txt",
+    header = T, row.names = 1,
+    sep = "\t", check.names = F
+)
+tree <- read.tree("./input/tree.nwk")
+
+OTU <- otu_table(otu_num, taxa_are_rows = T)
+TAX <- tax_table(tax_mat)
+samples <- sample_data(samples_df)
+ps <- phyloseq(OTU, TAX, samples, tree)
+ps
+# save.image(file = "project.RData")
+# load(file = "project.RData")
+```
+> phyloseq-class experiment-level object
+> phyloseq-class experiment-level object
+> otu_table()   OTU Table:         [ 1584 taxa and 171 samples ]
+> sample_data() Sample Data:       [ 171 samples by 1 sample variables ]
+> tax_table()   Taxonomy Table:    [ 1584 taxa by 7 taxonomic ranks ]
+> phy_tree()    Phylogenetic Tree: [ 1584 tips and 1560 internal nodes ]
+
+## 过滤
+查看数据
+```{r}
+nsamples(ps) # 171
+ntaxa(ps) # 1584
+# sample_sums(ps) # 查看所有样本总序列数
+```
+
+```{r}
+# tax_table<-tax_table(ps_dada2)
+# write.table(tax_table, file = "tax_table.txt", row.names = FALSE, quote = F, sep = "\t")
+
+
+ps %>%
+    subset_taxa(
+        # Kingdom == "Bacteria" &
+            !grepl("mitochondria", Family) &
+            !grepl("Chloroplast", Class)
+    )
+```
+
+
+## 查看样本和OTU的关系
+
+
+```{r}
+
+observed <- estimate_richness(ps, measures = c("Observed"))
+explore.df <- cbind(observed, sample_sums(ps), sample_data(ps)$Group)
+colnames(explore.df) <- c("Observed", "Sample_Sums", "Group")
+observed_mean <- mean(explore.df$Observed)
+sample_sum_mean <- mean(explore.df$Sample_Sums)
+ggplot(data = explore.df, aes(x = Sample_Sums, y = Observed, color = Group)) +
+    geom_point() +
+    geom_smooth(
+        method = "auto", se = TRUE, fullrange = FALSE, level = 0.95,
+        inherit.aes = F, mapping = aes(Sample_Sums, Observed),
+        data = explore.df
+    )
+```
+
+
+
+## 16s 扩增子抽平或重采样
+❓话说什么叫抽平呀
+❓抽平用的是sub_qiimedata还是qiimedata: 我这里是用的rare.data画图，毕竟太少的OTU也没有必要展示？
+❓有OTU的colsum吗？
+```{r}
+# rare.data <- rarefy_even_depth(sub_qiimedata, rngseed = 1, replace = TRUE)
+ps.rarefied <- rarefy_even_depth(ps, rngseed = 1, sample.size = 0.95 * min(sample_sums(ps)), replace = F)
+# 141OTUs were removed because they are no longer ，present in any sample after random subsampling
+```
+其结果是按照序列数最少的样品重采样，
+```{r}
+sample_sums(ps.rarefied) # 都变成10422了
+```
+0个OTU由于重采样丰度较低而被删除。
+```{r}
+# a <- ps@otu_table[setdiff(rownames(ps@otu_table), rownames(ps.rarefied@otu_table)), ]
+# dim(a) # 141 171
+# max(rowSums(a)) # 把序列数少于等于8的otu删除
+```
+## 筛选
+
+
+```{r}
+## 筛选在所有样本中总序列数大于1%的otu
+ps_relative <- transform_sample_counts(ps.rarefied, function(x) x / sum(x) * 100)
+sub_qiimedata <- prune_taxa(taxa_sums(ps_relative) >= 1, ps) # 891
+# ntaxa(sub_qiimedata)
+# 筛选去除序列数大于10000的样本，
+# sub_qiimedata <- prune_samples(sample_sums(ps_dada2) >= 10000, ps_dada2)
+# nsamples(sub_qiimedata) # 171。说明都大于10000
+
+# 去除至少20％样本中未见过3次以上的OTU，💡先用这个？用这个的α多样性最符合我心意，都是显著
+# sub_qiimedata <- filter_taxa(
+#     ps,
+#     function(x) sum(x > 3) > (0.1 * length(x)), TRUE
+# ) # 109
+# ntaxa(sub_qiimedata)
+
+```
+## α多样性分析
+
+
+（1）使用phyloseq包的plot_richness函数
+```{r}
+# qiimedata <- ps
+qiimedata <- sub_qiimedata
+p <- plot_richness(qiimedata, "Group", 
+                   measures=NULL,
+                   color = "Group")+
+  geom_boxplot(aes(fill=Group),alpha=0.5)+
+  theme_bw()+xlab(NULL)
+#   scale_color_aaas()
+#   scale_fill_aaas(alpha=0.7)
+library("ggpubr")#用于事后检验标记
+mycompare=list(c("C","AD"))
+p<-p+stat_compare_means(comparisons=mycompare,
+                        label = "p.signif",
+                        method = 'wilcox')
+p
+ggsave("plot/alpha_index1.svg",plot=p,width=16,height=8)
+
+```
+（2）MicrobiotaProcess包的plot_richness函数
+```{r}
+alphaobj <- get_alphaindex(qiimedata)
+p_alpha <- ggbox(alphaobj,
+    geom = "boxplot",
+    factorNames = "Group",
+    p_textsize = 3,
+    signifmap = FALSE
+) +
+    theme_bw() +
+    geom_point(aes(color = Group)) 
+    # scale_color_aaas() +
+    # scale_fill_aaas()
+p_alpha
+ggsave("plot/alpha_index_MicrobiotaProcess.svg", plot = p_alpha)
+```
+
+
+## 稀疏曲线
+按样品
+```{r}
+p_rare <- ggrarecurve(
+    obj = ps,
+    indexNames = c("Observe", "Chao1", "ACE","Simpson"),
+    chunks = 300
+) +
+    theme(
+        legend.spacing.y = unit(0.005, "cm"),
+        legend.text = element_text(size = 2)
+    ) +
+    theme_bw()
+
+# p_rare
+ggsave("plot/rarecurve_sample.svg", plot = p_rare)
+```
+
+```{r}
+
+p2_rare <- ggplot(p_rare$data, aes(readsNums, value, color = Group)) +
+    geom_point(stat = "summary", fun = mean) +
+    geom_smooth() +
+    facet_wrap(~Alpha, scale = "free") +
+    theme_bw() +
+    xlab("Number of sequence") +
+    ylab("alpha metric") +
+    scale_color_aaas() +
+    scale_fill_aaas()
+
+ggsave("plot/rarecurve_group.png", p2_rare)
+```
+
+
+
+```{r}
+# 转化OTUcount数为相对丰度
+GPr <- transform_sample_counts(sub_qiimedata, function(x) x / sum(x) * 100)
+head(GPr@tax_table)
+p_phylum <- plot_bar(GPr, fill = "Phylum") +
+    facet_wrap(~Group, scales = "free")
+ggsave("plot/tax_01_phylum.svg", p_phylum , width = 20)
+
+# Class
+p_class <- plot_bar(GPr, fill = "Class") +
+    facet_wrap(~Group, scales = "free")
+ggsave("plot/tax_02_class.svg", p_class, width = 20)
+
+# Order
+p_order <- plot_bar(GPr, fill = "Order") +
+    facet_wrap(~Group, scales = "free")
+ggsave("plot/tax_03_order.svg", p_order,width=20)
+
+# Family
+p_family <- plot_bar(GPr, fill = "Family") +
+    facet_wrap(~Group, scales = "free")
+ggsave("plot/tax_04_family.svg", p_family, width = 20)
+
+p_genus <- plot_bar(GPr, fill = "Genus") +
+    facet_wrap(~Group, scales = "free")
+ggsave("plot/tax_05_genus.svg", p_genus, width = 30)
+```
+
+## β多样性分析
+
+```{r}
+sub_qiimedata@sam_data[["Group"]] <- factor(sub_qiimedata@sam_data[["Group"]], levels = c("AD", "C"))
+```
+
+PCA
+```{r}
+pcares <- get_pca(obj = sub_qiimedata, method = "hellinger")
+pcaplot <- ggordpoint(
+    obj = pcares, biplot = FALSE, speciesannot = FALSE,
+    pc = c(1, 2), factorNames = c("Group"), ellipse = TRUE
+) 
+ggsave("plot/beta_01_PCA.svg", pcaplot, width = 9, height = 5)
+```
+
+PCoA
+```{r}
+# PCoA plot using the weighted UniFrac as distance
+data0 <- sub_qiimedata
+wunifrac_dist = phyloseq::distance(data0, method = "wunifrac")
+ordination = ordinate(data0 , method = "PCoA", distance = wunifrac_dist)
+plot_ordination(data0,ordination, color = "Group") + theme(aspect.ratio = 1)
+library(vegan)
+adonis(wunifrac_dist ~ sample_data(data0 )$Group) #0.047
+
+# PCoA plot using the unweighted UniFrac as distance )
+unifrac_dist <- phyloseq::distance(
+    ps_relative , method = "unifrac")
+ordination = ordinate(data0 , method = "PCoA", distance = unifrac_dist)
+plot_ordination(data0, ordination, color = "Group",shape= "Group") + theme(aspect.ratio = 1)
+library(vegan)
+adonis(unifrac_dist ~ sample_data(data0)$Group) # 0.001 ***
+
+
+# PCoA plot using the weighted UniFrac as distance
+jaccard_dist <- phyloseq::distance(data0, method = "jaccard")
+ordination <- ordinate(data0, method = "PCoA", distance = jaccard_dist)
+plot_ordination(data0, ordination, color = "Group") + theme(aspect.ratio = 1)
+library(vegan)
+adonis(jaccard_dist ~ sample_data(data0)$Group) # 0.001 ***
+
+# PCoA plot using the weighted UniFrac as distance
+bray_dist <- phyloseq::distance(data0, method = "bray")
+ordination <- ordinate(data0, method = "PCoA", distance = bray_dist)
+plot_ordination(data0, ordination, "Sample", color = "Group")
+library(vegan)
+adonis(bray_dist ~ sample_data(data0)$Group) #  0.001 ***
+
+library(amplicon)
+
+```
+```{r}
+#碎石图来查看排名前几的轴的贡献率
+ordu <- ordinate(sub_qiimedata,
+    distance = "uunifrac",
+    method = "PCoA"
+)
+plot_scree(ordu) + theme_bw()
+#碎石图来查看排名前几的轴的贡献率
+ordu <- ordinate(sub_qiimedata,
+    distance = "euclidean",
+    method = "PCoA"
+)
+plot_scree(ordu) + theme_bw()
+
+
+pcoares <- get_pcoa(
+    obj = sub_qiimedata,
+    distmethod = "euclidean", method = "hellinger"
+)
+pcoaplot <- ggordpoint(
+    obj = pcoares, biplot = FALSE,
+    speciesannot = FALSE, pc = c(2, 1),
+    factorNames = c("Group"), ellipse = T
+)
+ggsave("plot/beta_01_PCoA_euclidean.svg", pcoaplot, width = 9, height = 5)
+
+
+pcoares <- get_pcoa(
+    obj = sub_qiimedata,
+    distmethod = "unifrac",
+    method = "hellinger"
+)
+pcoaplot <- ggordpoint(
+    obj = pcoares, biplot = FALSE,
+    speciesannot = FALSE,
+    pc = c(1, 2),
+    factorNames = c("Group"), ellipse = T
+)
+ggsave("plot/beta_01_PCoA_Unweighted-UniFrac.svg", pcoaplot, width = 9, height = 5)
+
+
+pcoares <- get_pcoa(
+    obj = ps,
+    distmethod = "wunifrac",
+    method = "hellinger"
+)
+
+pcoaplot <- ggordpoint(
+    obj = pcoares, biplot = FALSE,
+    speciesannot = FALSE,
+    pc = c(1,2),
+    factorNames = c("Group"), ellipse = T
+)+coord_cartesian(xlim=c(-0.07, 0.07), ylim=c(-0.05, 0.05))
+ggsave("plot/beta_01_PCoA_weighted-UniFrac1.svg", pcoaplot, width = 9, height = 5)
+
+pcoares <- get_pcoa(
+    obj =  sub_qiimedata,
+    distmethod = "bray",
+    method = "hellinger"
+)
+pcoaplot <- ggordpoint(
+    obj = pcoares, biplot = FALSE,
+    speciesannot = FALSE,
+    pc = c(1, 2),
+    factorNames = c("Group"), ellipse = T
+)
+ggsave("plot/beta_01_PCoA_Bray-Curtis.svg", pcoaplot, width = 9, height = 5)
+pcoares <- get_pcoa(
+    obj = sub_qiimedata,
+    distmethod = "jaccard",
+    method = "hellinger"
+)
+pcoaplot <- ggordpoint(
+    obj = pcoares, biplot = FALSE,
+    speciesannot = FALSE,
+    pc = c(1, 2),
+    factorNames = c("Group"), ellipse = T
+)
+ggsave("plot/beta_01_PCoA_jaccard.svg", pcoaplot, width = 9, height = 5)
+```
+
+## Venn图
+```{r}
+upsetda <- get_upset(ps.rarefied, factorNames = "Group")
+head(upsetda)
+library(UpSetR)
+upset(upsetda,
+    sets = c(
+        "AD","C"
+    ), sets.bar.color = "#56B4E9",
+    order.by = "freq", empty.intersections = "on"
+)
+```
+
+## NMDS
+
+根据Bray - Curtis距离和NMDS排序进行多元分析
+排序分析（Ordination analysis）是探索复杂的系统发育测序数据的得力工具。
+简而言之，排序（ordination）的过程就是在一个可视化的低维空间重新排列这些样方，
+使得样方之间的距离最大程度地反映出平面散点图内样方之间的关系信息。phyloseq分别通过ordinate()和plot_ordination()函数，来进行排序分析及其可视化
+
+
+非度量多维尺度分析是一种将多维空间的研究对象（样本或变量）简化到低维空间进行定位、分析和归类，
+同时又保留对象间原始关系的数据分析方法。
+适用于无法获得研究对象间精确的相似性或相异性数据，仅能得到他们之间等级关系数据的情形。
+其基本特征是将对象间的相似性或相异性数据看成点间距离的单调函数，
+在保持原始数据次序关系的基础上，用新的相同次序的数据列替换原始数据进行度量型多维尺度分析。
+
+其特点是根据样品中包含的物种信息，以点的形式反映在多维空间上，
+而对不同样品间的差异程度，则是通过点与点间的距离体现的，
+最终获得样品的空间定位点图。
+```{r}
+ps <- rare.data
+carbom.ord <- ordinate(ps, "NMDS", "bray")
+# 绘制OTU
+plot_ordination(ps, carbom.ord,
+    type = "taxa", color = "Class",
+    title = "OTUs"
+) + guides(color = FALSE) + theme_bw()
+
+#绘制样本
+# ❓不显示颜色
+plot_ordination(ps, carbom.ord,
+    type = "samples", color =c "Group", title = "Samples",
+) + labs(color = "") + geom_point(size = 3) + theme_bw()
+
+plot_ordination(ps, carbom.ord,
+    type = "split", color = "Class",
+    title = "biplot", label = "station"
+) +geom_point(size = 3) + guides(color = FALSE) + theme_bw()
+```
+
+## CCA
+❓也不能显示颜色
+```{r}
+pacman::p_load(
+    tidyverse, phyloseq, MicrobiotaProcess,
+    ape, microbiome, patchwork
+)
+
+ps.cca <- ordinate(ps, "CCA")
+A <- plot_ordination(ps, ps.cca,
+    type = "samples", color = "Group"
+) +
+    geom_point(size = 4) + theme_bw()
+B <- plot_ordination(ps, ps.cca,
+    type = "taxa", color = "Phylum"
+) +
+    geom_point(size = 4) + theme_bw()
+
+A | B
+```
+## 计算距离矩阵
+```{r}
+bray <- get_dist(ps, distmethod = "bray") %>% as.matrix()
+write.table(bray, file = "result/bray_distance.xls", sep = "\t", row.names = T)
+# dim(bray)
+
+uunifrac <- get_dist(ps, distmethod = "uunifrac") %>% as.matrix()
+write.table(uunifrac, file = "result/uunifrac_distance.xls", sep = "\t", row.names = T)
+
+wunifrac <- get_dist(ps, distmethod = "wunifrac") %>% as.matrix()
+write.table(wunifrac, file = "result/wunifrac_distance.xls", sep = "\t", row.names = T)
+```
+报了一个
+>  data length [9783] is not a sub-multiple or multiple of the number of rows [4892]
+看了矩阵才发现没了一半是咋回事？

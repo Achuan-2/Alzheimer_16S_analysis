@@ -1,0 +1,7 @@
+Feature	KW_pvalue	DunnTest_comparison	DunnTest_Z	DunnTest_PValueAdjusted
+Cellular Processes	3.047657e-06	AD - C	-4.667582	1.523828e-06
+Environmental Information Processing	0.5640837	AD - C	0.5767864	0.2820419
+Genetic Information Processing	0.1678109	AD - C	-1.379272	0.08390546
+Human Diseases	0.9450186	AD - C	0.0689636	0.4725093
+Metabolism	1.905009e-05	AD - C	4.275743	9.525043e-06
+Organismal Systems	0.02798968	AD - C	2.197431	0.01399484

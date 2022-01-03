@@ -1,0 +1,7 @@
+"KEGG pathway"	"Group"	"Mean"	"SE"	"Duncan significance"
+"Apoptosis - fly"	"AD"	0.295304527695408	0.0770764093418062	"a"
+"Apoptosis - fly"	"C"	-0.415921869993533	0.0636050223288172	"b"
+"Bacterial chemotaxis"	"AD"	-0.337513921525453	0.0589911327483136	"b"
+"Bacterial chemotaxis"	"C"	0.475371720458384	0.0835969969282414	"a"
+"Flagellar assembly"	"AD"	-0.3126968794661	0.0564529609144252	"b"
+"Flagellar assembly"	"C"	0.440418140093099	0.0879064377547997	"a"

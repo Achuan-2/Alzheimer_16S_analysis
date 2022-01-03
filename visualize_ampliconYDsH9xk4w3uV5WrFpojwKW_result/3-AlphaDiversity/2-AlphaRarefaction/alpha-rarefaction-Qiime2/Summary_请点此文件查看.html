@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>q2_diversity : alpha_rarefaction</title>
+    <link rel="stylesheet" href="./q2templateassets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./q2templateassets/css/normalize.css"/>
+    <link rel="stylesheet" href="./q2templateassets/css/base-template.css"/>
+    <script src="./q2templateassets/js/jquery-3.2.0.min.js" charset="utf-8"></script>
+    <script src="./q2templateassets/js/bootstrap.min.js" charset="utf-8"></script>
+    
+<script src='dist/vendor.bundle.js'></script>
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div id="q2templatesheader" class="row">
+        <div class="col-lg-12">
+          <a href="http://qiime2.org/">
+            <img src="./q2templateassets/img/qiime2-rect-200.png"
+            alt="QIIME 2">
+          </a>
+        </div>
+      </div>
+        
+
+<div class='row'>
+  <div class='col-lg-12' id='main'>
+    <h1>Alpha rarefaction</h1>
+
+    
+
+    <div class='controls row'>
+      <div class='col-lg-2 form-group downloadCSV'>
+        <label>&nbsp;</label>
+        <a class='btn btn-default form-control'>
+          Download CSV
+        </a>
+      </div>
+      <div class='col-lg-2 form-group metricPicker'>
+        <label>Metric</label>
+        <select class='form-control'></select>
+      </div>
+      <div class='col-lg-3 form-group columnPicker'>
+        <label>Sample Metadata Column</label>
+        <select class='form-control'></select>
+      </div>
+    </div>
+    <div class='viz row'>
+      <div class='col-lg-9' style='width: 1120px;'>
+        <svg class='plotSvg'>
+          <g id='chart'>
+            <g class='x axis'></g>
+            <g class='y axis'></g>
+            <text class='x label'></text>
+            <text class='y label'></text>
+          </g>
+          <g id='subChart'>
+            <g class='x axis'></g>
+            <g class='y axis'></g>
+            <text class='x label'></text>
+            <text class='y label'></text>
+          </g>
+        </svg>
+      </div>
+      <div class='col-lg-2' style='height: 1050px;'>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#helpModal">
+          Help
+        </button>
+        <div class="modal fade" id="helpModal" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  <span>
+                    &times;
+                  </span>
+                </button>
+                <h4 class="modal-title" id="helpModalLabel">
+                  Alpha Diversity Help
+                </h4>
+              </div>
+              <div class="modal-body">
+                <p>
+                  In the legend below, click the box symbols to toggle the
+                  display of the line charts and click the circles to toggle
+                  the display of the box plots and scatter plots. If a color is
+                  visible in the symbol, the corresponding plot elements are
+                  displayed, otherwise they are hidden.
+                </p>
+
+                <p>
+                  The box plots in the upper figure represent the distribution
+                  of the selected alpha diversity metric for each group of
+                  samples at each even sampling depth. The lower and upper
+                  whiskers of the box plot are the 9th and 91st percentiles of
+                  the distribution (respectively), while the lower and upper
+                  extents of the box are the 25th and 75th percentiles of the
+                  distribution (respectively). The horizontal bar through the
+                  middle of the box is the median  of the dstribution
+                  (i.e., the 50th percentile). Outlier points of these
+                  distributions are not shown.
+                </p>
+
+                <p>
+                  The line chart in the upper figure connects the median
+                  values of the alpha diversity metric distribution
+                  across the sampling depths.
+                </p>
+
+                <p>
+                  If a sampling depth is higher than the number of sequences
+                  in a sample, that sample will not be included in the
+                  rarefaction plot at that sampling depth. The line chart in
+                  the lower figure illustrates the number of samples in each
+                  group (i.e., the sample size for each box plot) at each
+                  sampling depth.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style='height: 25px; width: 300px; overflow-x: auto; overflow-y: hidden'>
+          <svg width='200' height='20' class='legendTitleSvg'>
+            <g class='legendTitle'></g>
+          </svg>
+        </div>
+        <div style='height: 900px; width: 300px; overflow-x: auto;' class='legendBoxDiv'>
+          <svg class='legendBoxSvg'>
+            <g></g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var d = {};
+  var columns = ['Group', 'sampleid_description'];
+  var metrics = ['observed_otus', 'shannon', 'faith_pd'];
+  var steps = 50;
+  function load_data(metric, column, data) {
+    if (column) {
+      if (!d[metric]) {
+        d[metric] = {};
+      }
+      d[metric][column] = data;
+    } else {
+      d[metric] = data;
+    }
+  }
+</script>
+
+<script src='observed_otus-Group.jsonp?callback=load_data'></script>
+
+<script src='observed_otus-sampleid_description.jsonp?callback=load_data'></script>
+
+<script src='shannon-Group.jsonp?callback=load_data'></script>
+
+<script src='shannon-sampleid_description.jsonp?callback=load_data'></script>
+
+<script src='faith_pd-Group.jsonp?callback=load_data'></script>
+
+<script src='faith_pd-sampleid_description.jsonp?callback=load_data'></script>
+
+<script src='dist/bundle.js'></script>
+
+    </div>
+    <script type="text/javascript">
+      if (window.frameElement) {
+          document.getElementById('q2templatesheader').remove();
+      }
+    </script>
+    
+    
+  </body>
+</html>

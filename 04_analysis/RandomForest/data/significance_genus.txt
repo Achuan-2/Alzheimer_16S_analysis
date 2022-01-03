@@ -1,0 +1,17 @@
+var
+Bifidobacterium
+Akkermansia
+Faecalibacterium
+Agathobacter
+[Ruminococcus]_gnavus_group
+Erysipelatoclostridium
+Enterococcus
+Roseburia
+Romboutsia
+Lachnospiraceae_NK4A136_group
+Clostridia_UCG-014
+Coprococcus
+Fusicatenibacter
+Butyricicoccus
+Hungatella
+

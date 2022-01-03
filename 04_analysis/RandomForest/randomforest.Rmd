@@ -1,0 +1,295 @@
+```{r}
+load("data.RData")
+```
+```{r}
+# 读取 OTUs 丰度表
+rm(list = ls())
+library(tidyverse)
+library(stringr)
+
+```
+
+读取和处理数据
+```{r}
+otu <- read.table("./data/table_genus.tsv", header = TRUE, row.names = 1, sep = "\t", fill = TRUE)
+## 过滤注释有问题的特征（
+otu <- filter(otu, !grepl(";__|uncultured", rownames(otu)))
+# 精简物种注释
+rownames(otu) <- sapply(str_split(rownames(otu), "__"), "[", 7)
+# 随机森林模型数据需要归一化吗？
+# 随机森林的逻辑是基于决策树模型多棵树模型，内部采用boostrap抽样训练多棵树，然后做bagging预测提高其精度，决策树模型具体实现机制以一定区别，不过一般是基于排序的划分，所以一般不需要进行归一化处理。
+# ！过滤低丰度 OTUs 类群，它们对分类贡献度低，且影响计算效率
+# 171 个样本，就按 OTUs 丰度的行和不小于 171 为准吧
+dim(otu) # 208 171
+otu <- otu[which(rowSums(otu) >= 171), ]
+dim(otu) # 172 171
+# 合并分组，得到能够被 randomForest 识别计算的格式
+group <- read.table("./data/metadata.txt",
+    sep = "\t", row.names = 1,
+    header = TRUE, fill = TRUE
+)
+otu1 <- data.frame(t(otu))
+otu_group <- cbind(otu1, group)
+```
+```{r}
+# 将总数据集分为训练集（占 70%）和测试集（占 30%）
+set.seed(171)
+select_train <- sample(171, 171 * 0.5)
+otu_train <- otu_group[select_train, ] # 85
+dim(otu_train)
+otu_test <- otu_group[-select_train, ] # 86
+dim(otu_test)
+
+```
+
+随机森林
+```{r}
+####################################################
+# randomForest 包的随机森林
+library(randomForest)
+# 随机森林计算（默认生成 500 棵决策树），详情 ?randomForest
+set.seed(123)
+
+otu_train_forest <- randomForest(
+    as.factor(Group) ~ .,
+    data = otu_train,
+    importance = TRUE
+)
+otu_train_forest
+
+plot(randomForest::margin(otu_train_forest), main = "观测值被判断正确的概率图")
+
+
+# 训练集自身测试
+train_predict <- predict(otu_train_forest, otu_train)
+# table 可以直接搞出预测和实际的混淆矩阵
+compare_train <- table(
+    train_predict, otu_train$Group,
+    dnn = c("Actual", "Predicted")
+)
+compare_train
+```
+ randomForest(formula = as.factor(Group) ~ ., data = otu_train,      importance = TRUE) 
+               Type of random forest: classification
+                     Number of trees: 500
+No. of variables tried at each split: 13
+
+        OOB estimate of  error rate: 21.18%
+Confusion matrix:
+   AD  C class.error
+AD 40  8   0.1666667
+C  10 27   0.2702703
+
+预测结果
+      Predicted
+Actual AD  C
+    AD 48  0
+    C   0 37
+预测概率
+```{r}
+sum(diag(compare_train) / sum(compare_train))
+```
+
+使用测试集评估
+```{r}
+test_predict <- predict(otu_train_forest, otu_test)
+compare_test <- table(
+    otu_test$Group,
+    test_predict,
+    dnn = c("Actual", "Predicted")
+)
+compare_test
+sum(diag(compare_test) / sum(compare_test))
+pred_rf_all <- predict(otu_train_forest, otu_test, type = "prob")
+```
+      Predicted
+Actual AD  C
+    AD 42 10
+    C   9 25
+
+```{r}
+### 关键 OTUs 识别
+# 查看表示每个变量（OTUs）重要性的得分
+summary(otu_train_forest)
+importance_otu <- data.frame(importance(otu_train_forest))
+head(importance_otu)
+
+# 可以根据某种重要性的高低排个序，例如根据“Mean Decrease Accuracy”指标
+importance_otu <- importance_otu[
+    order(importance_otu$MeanDecreaseAccuracy,
+        decreasing = TRUE
+    ),
+]
+head(importance_otu)
+# 输出表格
+write.table(importance_otu,
+    "importance_otu_score.txt",
+    sep = "\t",
+    col.names = NA,
+    quote = FALSE
+)
+
+
+```
+
+## 交叉验证
+
+```{r}
+### 交叉验证帮助选择特定数量的 OTUs
+# 5 次重复十折交叉验证
+otu_train.cv <- replicate(
+    5,
+    rfcv(
+        otu_train[-ncol(otu_train)],
+        as.factor(otu_train$Group),
+        cv.fold = 10, step = 1.5
+    ),
+    simplify = FALSE
+)
+
+# 提取验证结果绘图
+# install.packages("reshape2")
+otu_train.cv <- data.frame(sapply(otu_train.cv, "[[", "error.cv"))
+otu_train.cv$otus <- rownames(otu_train.cv)
+otu_train.cv <- reshape2::melt(otu_train.cv, id = "otus")
+otu_train.cv$otus <- as.numeric(as.character(otu_train.cv$otus))
+
+```
+确定提取多少重要的OTU
+```{r}
+# 拟合线图
+library(ggplot2)
+# 用于在 geom_smooth() 中添加拟合线，或者使用 geom_line() 替代 geom_smooth() 绘制普通折线
+library(splines)
+
+p_line <- ggplot(otu_train.cv, aes(otus, value)) +
+    geom_smooth(se = FALSE,color="#65beb6", method = "glm", formula = y ~ ns(x, 6)) +
+    theme(
+        panel.grid = element_blank(),
+        panel.background = element_rect(
+            color = "black", fill = "transparent"
+        )
+    ) +
+    labs(title = "", x = "Number of OTUs", y = "Cross-validation error")
+
+p_line
+num <- 15
+# 大约提取前 15 个重要的 OTUs
+# p_line <- p_line + geom_vline(xintercept = 12)
+p_line<-p_line + geom_vline(xintercept = num, show.legend = TRUE) + geom_text(aes(x = num, label = num, y = 0.2), colour = "#f8756b")
+p_line
+ggsave("plot/OTU_select.svg", p_line)
+```
+```{r}
+# 作图展示 top 重要的 OTUs
+varImpPlot(otu_train_forest,
+    n.var = min(num, nrow(otu_train_forest$importance)),
+    main = paste0("Top ", num, "- variable importance")
+)
+# 输出表格
+write.table(importance_otu[1:num, ],
+    "importance_otu_top15_score.txt",
+    sep = "\t", col.names = NA, quote = FALSE
+)
+# 输出top15的丰度表
+import_15 <- read.table("./importance_otu_top15_score.txt", header = TRUE, row.names = 1, sep = "\t", fill = TRUE)
+rownames(import_15)
+# otu[rownames(import_15),]
+otu_15 <- otu[rownames(import_15), ]
+
+write.table(otu_15,
+    "importance_otu_top15.tsv",
+    sep = "\t",
+    col.names = NA,
+    quote = FALSE
+)
+```
+
+## 简约分类器
+
+```{r}
+# 选择 top15 重要的 OTUs，例如上述已经根据“Mean Decrease Accuracy”排名获得
+
+otu_select <- rownames(importance_otu)[1:num]
+
+# 数据子集的训练集和测试集
+otu_train_simpl <- otu_train[, c(otu_select, "Group")]
+otu_test_simpl <- otu_test[, c(otu_select, "Group")]
+
+# 随机森林计算（默认生成 500 棵决策树），详情 ?randomForest
+set.seed(123)
+otu_train_forest_simpl <- randomForest(as.factor(Group) ~ ., data = otu_train_simpl, importance = TRUE)
+otu_train_forest_simpl
+plot(randomForest::margin(otu_train_forest_simpl), main = "观测值被判断正确的概率图")
+
+```
+No. of variables tried at each split: 3
+
+        OOB estimate of  error rate: 17.65%
+Confusion matrix:
+   AD  C class.error
+AD 42  6   0.1250000
+C   9 28   0.2432432
+
+```{r}
+# 训练集自身测试
+train_predict_simpl <- predict(otu_train_forest_simpl, otu_train_simpl)
+compare_train_simpl <- table(train_predict_simpl, otu_train_simpl$Group, dnn = c("Actual", "Predicted"))
+compare_train_simpl
+
+```
+train_predict_simpl AD  C
+                 AD 48  0
+                 C   0 37
+```{r}
+# 使用测试集评估
+test_predict_simpl <- predict(otu_train_forest_simpl, otu_test_simpl)
+compare_test_simpl <- table(otu_test_simpl$Group, test_predict_simpl, dnn = c("Actual", "Predicted"))
+compare_test_simpl
+confusion_matrix <- as.matrix(compare_test_simpl)
+library(pheatmap)
+pheatmap(
+    confusion_matrix ,
+    cluster_cols = FALSE,
+    cluster_rows = FALSE,
+    legend = FALSE,
+    display_numbers = TRUE,
+    number_format = "%1d",
+    cellwidth = 60, cellheight = 60,
+    color = c("#f5fafa", "#cee4e5", "#009194"),
+    fontsize = 10,
+    filename = "plot/confusion_matrix.pdf"
+)
+
+```
+    compare_test_simpl
+Actual AD  C
+    AD 43  9
+    C  11 23
+```{r}
+sum(diag(compare_test_simpl) / sum(compare_test_simpl))
+```
+0.7674419
+```{r}
+
+# install.packages("pROC")
+library(pROC)
+pred_rf <- predict(otu_train_forest_simpl, otu_test_simpl, type = "prob")
+roc_simpl <- roc(otu_test_simpl$Group, pred_rf[, 2],
+    # plot = TRUE,
+    # legacy.axes = TRUE, percent = TRUE, xlab = "False Positive Percentage", ylab = "True Postive Percentage", col = "#377eb8",
+    # lwd = 3, print.auc = TRUE, auc.polygon = TRUE, auc.polygon.col = "#377eb83f"
+)
+plot_roc<-ggroc(roc_simpl,
+    lwd = 2, legacy.axes = TRUE, col = "#377eb8",
+) + theme_bw()+  geom_abline(slope = 1, intercept = 0,color="#00000085",linetype="dashed")+
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
+    geom_text(aes(x = 0.5, label = paste0("AUC:0.8487"), y = 0.7), colour = "#377eb8")
+ggsave("plot/roc.svg",plot_roc)
+
+```
+保存数据到Rdata
+```{r}
+# save.image("data.RData")
+load("data.RData")
+```
