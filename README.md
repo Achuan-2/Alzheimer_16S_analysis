@@ -1,5 +1,6 @@
-# Alzheimer_16S_analysis
-a simple 16S Amplicon Sequencing analytical Practice for patients of Alzheimer's Disease
+# 阿尔茨海默症患者肠道菌群16S-测序数据分析
+
+Video: https://www.bilibili.com/video/BV1Sm4y1S7Mi
 ## Methods
 ![流程图_2022-01-06](https://cdn.jsdelivr.net/gh/Achuan-2/PicBed@pic/assets/README/流程图_2022-01-06.svg)
 ## Result
@@ -15,9 +16,9 @@ a simple 16S Amplicon Sequencing analytical Practice for patients of Alzheimer's
 > 图 1 （A ）两组间 Observed species、 ACE、 Chao1 以及 Shannon、Simpson 指数得分的箱式图：红色代表 AD 患者组，绿色代表健康对照组；箱子的上下限，分别是数据的上四分位数和下四分位数；箱子中间的一条线，是数据的中位数，代表了组内数据的平均水平；每个指数都使用 Wilcoxon 检验分析组间显著性差异，'\*\*' 代表 p 值 < 0.01， '\*' 代表 p 值 < 0.05  （B）使用 PCoA 降维可视化不同距离算法下的样本距离：四张图从左到右，从上到下分别是：Jaccard, Bray–Curtis, Unweighted UniFrac 和 Weighted UniFrac 距离的 PCoA 降维距离分布图。横坐标（PCoA1）表示第一主成分，百分比则表示第一主成分对样品差异的贡献值；纵坐标（PCoA2）表示第二主成分，百分比表示第二主成分对样品差异的贡献值；每一个点代表一个样本，相同颜色的点来自同一个分组，红色代表 AD 患者组，绿色代表健康对照组；虚线椭圆代表的是 90% 置信度下，对该组的总体区间估计；每张图的左上方标注了使用 PERMANOVA 检验得到的 p 值。
 
 
-在门水平上，发现 AD 患者肠道微生物中 Verrucomicrobiota（疣微菌门） 和 Actinobacteriota （放线菌门）明显增多；而 Firmicutes （厚壁菌门）显著减少。而 Proteobacteria （变形菌门）和 Bacteroidetes（拟杆菌门）没有显著变化，这与一些研究不一致
-
 ### 阿尔兹海默症患者肠道微生物组成的相对失调
+
+在门水平上，发现 AD 患者肠道微生物中 Verrucomicrobiota（疣微菌门） 和 Actinobacteriota （放线菌门）明显增多；而 Firmicutes （厚壁菌门）显著减少。而 Proteobacteria （变形菌门）和 Bacteroidetes（拟杆菌门）没有显著变化，这与一些研究不一致
 
 在科水平上，AD 患者肠道微生物中 Bifidobacteriaceae（双歧杆菌科）、Akkermansiaceae（艾克曼菌科）、Enterococcaceae（肠球菌科）、Corynebacteriaceae（棒状杆菌科）、Eubacteriaceae（优杆菌科） 在内的细菌家族显著增加；而 Ruminococcaceae（瘤胃菌科）、Lachnospiraceae（毛螺菌科）、Peptostreptococcaceae（消化链球菌科）、Monoglobaceae、Butyricicoccaceae 显著下降。在 AD 患者减少的科水平中，Ruminococcaceae 和 Lachnospiraceae 生产不同类型的短链脂肪酸（SCFA）。在 SCFA 中，丁酸盐因其对维持健康的有益作用而在研究中受到特别关注。丁酸盐可影响胃肠生理学、肝脏代谢的外周免疫和血脑屏障的完整性，从而间接促进大脑功能，它可以驱动小胶质细胞的成熟，并且是维持成熟小胶质细胞所必需的。
 
@@ -49,9 +50,9 @@ a simple 16S Amplicon Sequencing analytical Practice for patients of Alzheimer's
 
 ### 阿尔兹海默症患者的肠道微生物功能失调
 
-在二级 KEGG 通路上，比较了 45 个通路，并确定了 7 个在 AD 患者组和对照组之间具有明显差异丰度的 KEGG 类别，发现 AD 患者肠道菌群的 Glycan biosynthesis and metabolism（聚糖生物合成与代谢）、Carbohydrate metabolism（碳水化合物代谢），Chemical structure transformation maps （化学结构转换图）显著增加；而在 Cell motility（细胞运动）、“Folding,sorting and degration”（折叠分类讲解）、Energy metabolism（能量代谢)，lipid metabolism(脂质代谢）显著减少
+在二级 KEGG 通路上，比较了 45 个通路，并确定了 7 个在 AD 患者组和对照组之间具有明显差异丰度的 KEGG 类别，发现 AD 患者肠道菌群的 Glycan biosynthesis and metabolism（聚糖生物合成与代谢）、Carbohydrate metabolism（碳水化合物代谢），Chemical structure transformation maps （化学结构转换图）显著增加；而在 Cell motility（细胞运动）、“Folding,sorting and degration”（折叠分类讲解）、Energy metabolism（能量代谢)，lipid metabolism(脂质代谢）显著减少（图4)
 
-在三级 KEGG 通路上，比较了 163 个通路，并确定了 14 个在 AD 患者组和对照组之间具有明显差异丰度的 KEGG 类别，发现 AD 患者肠道菌群中的 Lipoic acid metabolism（硫辛酸代谢增加）、Other glycan degradation（其他聚糖降解）、Biosynthesis of terpenoids and steriods（萜类化合物和类固醇的生物合成）、Glycosaminoglycan degradation（糖胺聚糖降解）、Glycosphingolipid biosynthesis - globo and isoglobo series（糖鞘脂的生物合成 - globo 和 isoglobo 系列） 和 Glycosphingolipid biosynthesis - ganglio series （糖鞘脂的生物合成 - ganglio 系列）共 6 条途经显著增加；而 Fatty acid biosynthesis（脂肪酸合成）、Peptidoglycan biosynthesis（肽聚糖生物合成）、Biotin metabolism （生物素代谢）、Porphyrin and chlorophyll metabolism（卟啉和叶绿素代谢）、Bacterial chemotaxis（细菌趋化性）、Flagellar assembly（鞭毛组件）、Sulfur relay system（硫磺中继系统）和 Thiamine metabolism（硫胺素代谢）共 8 条途径在 AD 患者肠道微生物群中显著减少（图5 B)。
+在三级 KEGG 通路上，比较了 163 个通路，并确定了 14 个在 AD 患者组和对照组之间具有明显差异丰度的 KEGG 类别，发现 AD 患者肠道菌群中的 Lipoic acid metabolism（硫辛酸代谢增加）、Other glycan degradation（其他聚糖降解）、Biosynthesis of terpenoids and steriods（萜类化合物和类固醇的生物合成）、Glycosaminoglycan degradation（糖胺聚糖降解）、Glycosphingolipid biosynthesis - globo and isoglobo series（糖鞘脂的生物合成 - globo 和 isoglobo 系列） 和 Glycosphingolipid biosynthesis - ganglio series （糖鞘脂的生物合成 - ganglio 系列）共 6 条途经显著增加；而 Fatty acid biosynthesis（脂肪酸合成）、Peptidoglycan biosynthesis（肽聚糖生物合成）、Biotin metabolism （生物素代谢）、Porphyrin and chlorophyll metabolism（卟啉和叶绿素代谢）、Bacterial chemotaxis（细菌趋化性）、Flagellar assembly（鞭毛组件）、Sulfur relay system（硫磺中继系统）和 Thiamine metabolism（硫胺素代谢）共 8 条途径在 AD 患者肠道微生物群中显著减少（图5)。
 
 从而推知，肠道微生物群的功能失调可能参与 AD 的发病和发展。
 ![KEGG2_2022-01-06](https://cdn.jsdelivr.net/gh/Achuan-2/PicBed@pic/assets/README/KEGG2_2022-01-06.svg)
