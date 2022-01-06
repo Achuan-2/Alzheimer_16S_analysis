@@ -1,3 +1,0 @@
-sampleid	Group
-AD	AD
-C	C

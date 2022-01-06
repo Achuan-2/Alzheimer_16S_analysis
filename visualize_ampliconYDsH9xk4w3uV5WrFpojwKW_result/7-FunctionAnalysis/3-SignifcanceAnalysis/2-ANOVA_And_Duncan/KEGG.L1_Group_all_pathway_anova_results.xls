@@ -1,7 +1,0 @@
-"variable"	".y."	"p"	"p.adj"	"p.format"	"p.signif"	"method"
-"Cellular Processes"	"value"	1.22281688427914e-07	7.3e-07	"1.2e-07"	"****"	"Anova"
-"Environmental Information Processing"	"value"	0.622859172191342	1	"0.623"	"ns"	"Anova"
-"Genetic Information Processing"	"value"	0.268947197284443	0.81	"0.269"	"ns"	"Anova"
-"Human Diseases"	"value"	0.644076186594506	1	"0.644"	"ns"	"Anova"
-"Metabolism"	"value"	1.44168946548355e-05	7.2e-05	"1.4e-05"	"****"	"Anova"
-"Organismal Systems"	"value"	0.0187707690784242	0.075	"0.019"	"*"	"Anova"

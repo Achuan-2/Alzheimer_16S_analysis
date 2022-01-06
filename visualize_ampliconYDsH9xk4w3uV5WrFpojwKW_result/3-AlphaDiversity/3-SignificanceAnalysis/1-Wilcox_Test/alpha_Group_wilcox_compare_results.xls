@@ -1,6 +1,0 @@
-	variable	.y.	group1	group2	p	p.adj	p.format	p.signif	method
-1	chao1	value	AD	C	0.19813428	0.590	0.198	ns	Wilcoxon
-2	faith_pd	value	AD	C	0.77424565	0.770	0.774	ns	Wilcoxon
-3	observed_otus	value	AD	C	0.19649864	0.590	0.196	ns	Wilcoxon
-4	shannon	value	AD	C	0.01772049	0.086	0.018	*	Wilcoxon
-5	simpson	value	AD	C	0.01712811	0.086	0.017	*	Wilcoxon

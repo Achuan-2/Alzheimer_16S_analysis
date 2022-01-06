@@ -1,0 +1,13 @@
+Percentile	0.0	25.0	50.0	75.0	100.0	0.0	25.0	50.0	75.0	100.0
+Group	AD	AD	AD	AD	AD	C	C	C	C	C
+d__Archaea;p__Euryarchaeota	1.0	1.0	1.0	1.0	10514.0	1.0	1.0	1.0	1.0	349.0
+d__Bacteria;p__Actinobacteriota	33.0	392.25	1941.5	6806.75	36924.0	13.0	144.0	469.0	1644.0	10126.0
+d__Bacteria;p__Bacteroidota	1.0	82.75	528.5	2661.5	12775.0	1.0	178.0	599.0	2071.5	8553.0
+d__Bacteria;p__Campilobacterota	1.0	1.0	1.0	1.0	26.0	1.0	1.0	1.0	1.0	1.0
+d__Bacteria;p__Desulfobacterota	1.0	1.0	7.0	52.75	1372.0	1.0	1.0	8.0	29.0	222.0
+d__Bacteria;p__Firmicutes	650.0	4736.5	9018.0	14034.5	27807.0	570.0	9418.5	13075.0	16745.0	33072.0
+d__Bacteria;p__Fusobacteriota	1.0	1.0	1.0	1.0	5317.0	1.0	1.0	1.0	1.0	1773.0
+d__Bacteria;p__Patescibacteria	1.0	1.0	1.0	8.0	466.0	1.0	1.0	1.0	10.0	151.0
+d__Bacteria;p__Proteobacteria	10.0	201.0	1332.0	6493.0	25928.0	1.0	197.5	841.0	5173.0	29670.0
+d__Bacteria;p__Synergistota	1.0	1.0	1.0	1.0	174.0	1.0	1.0	1.0	1.0	31.0
+d__Bacteria;p__Verrucomicrobiota	1.0	4.0	12.0	774.75	24161.0	1.0	1.0	1.0	7.5	4573.0

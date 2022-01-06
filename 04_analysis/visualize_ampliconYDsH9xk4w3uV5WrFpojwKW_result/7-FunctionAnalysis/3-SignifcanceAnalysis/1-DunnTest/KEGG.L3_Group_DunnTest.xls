@@ -1,0 +1,323 @@
+Feature	KW_pvalue	DunnTest_comparison	DunnTest_Z	DunnTest_PValueAdjusted
+Apoptosis	0.6573596	AD - C	-0.4435616	0.3286798
+Apoptosis - fly	7.054485e-06	AD - C	4.492038	3.527243e-06
+Apoptosis - multiple species	0.001963637	AD - C	3.095678	0.0009818186
+Cell cycle	0.9178888	AD - C	0.1030934	0.4589444
+Cell cycle - Caulobacter	0.06714981	AD - C	-1.83067	0.0335749
+Ferroptosis	0.5811479	AD - C	0.5517088	0.2905739
+Meiosis - yeast	0.06774287	AD - C	1.826713	0.03387144
+Necroptosis	0.00337924	AD - C	-2.930953	0.00168962
+p53 signaling pathway	0.001963637	AD - C	3.095678	0.0009818186
+Bacterial chemotaxis	8.054927e-07	AD - C	-4.934032	4.027464e-07
+Flagellar assembly	1.208472e-05	AD - C	-4.376054	6.042362e-06
+Regulation of actin cytoskeleton	0.271852	AD - C	1.098808	0.135926
+Focal adhesion	0.271852	AD - C	1.098808	0.135926
+Signaling pathways regulating pluripotency of stem cells	0.1420919	AD - C	1.468045	0.07104596
+Tight junction	0.9178888	AD - C	0.1030934	0.4589444
+Biofilm formation - Escherichia coli	0.04286511	AD - C	-2.025022	0.02143255
+Biofilm formation - Pseudomonas aeruginosa	0.01676676	AD - C	-2.391783	0.008383378
+Biofilm formation - Vibrio cholerae	0.541022	AD - C	-0.6112682	0.270511
+Quorum sensing	0.01236692	AD - C	2.501498	0.006183461
+Autophagy - animal	0.9178888	AD - C	0.1030934	0.4589444
+Autophagy - yeast	0.1332197	AD - C	1.501526	0.06660984
+Endocytosis	0.002776026	AD - C	2.991509	0.001388013
+Lysosome	0.0001730778	AD - C	3.755381	8.653888e-05
+Peroxisome	0.402611	AD - C	0.8369673	0.2013055
+Phagosome	0.750047	AD - C	0.3185774	0.3750235
+ABC transporters	0.4709199	AD - C	0.7209831	0.23546
+Bacterial secretion system	0.3800965	AD - C	-0.8777185	0.1900482
+Phosphotransferase system (PTS)	0.1574342	AD - C	1.413754	0.07871711
+AMPK signaling pathway	0.001257021	AD - C	-3.225616	0.0006285105
+Apelin signaling pathway	0.9234938	AD - C	0.09603369	0.4617469
+Calcium signaling pathway	0.7146675	AD - C	-0.3655947	0.3573338
+FoxO signaling pathway	0.02562073	AD - C	2.231913	0.01281036
+HIF-1 signaling pathway	0.005861878	AD - C	2.755409	0.002930939
+MAPK signaling pathway - fly	0.3127942	AD - C	1.009376	0.1563971
+MAPK signaling pathway - plant	0.0007694893	AD - C	3.363543	0.0003847446
+MAPK signaling pathway - yeast	0.03054509	AD - C	2.162949	0.01527254
+PI3K-Akt signaling pathway	0.2879333	AD - C	-1.062666	0.1439666
+Phosphatidylinositol signaling system	2.075306e-06	AD - C	4.745949	1.037653e-06
+Phospholipase D signaling pathway	0.930058	AD - C	0.08777185	0.465029
+Plant hormone signal transduction	1.63263e-05	AD - C	4.309989	8.163148e-06
+Sphingolipid signaling pathway	0.7328522	AD - C	-0.341334	0.3664261
+Two-component system	0.0813514	AD - C	-1.742898	0.0406757
+cAMP signaling pathway	0.7986595	AD - C	0.2550823	0.3993298
+mTOR signaling pathway	0.750047	AD - C	0.3185774	0.3750235
+Cell adhesion molecules (CAMs)	0.271852	AD - C	1.098808	0.135926
+ECM-receptor interaction	0.271852	AD - C	1.098808	0.135926
+Proteasome	0.0003065594	AD - C	3.609693	0.0001532797
+Protein export	0.02562073	AD - C	-2.231913	0.01281036
+Protein processing in endoplasmic reticulum	0.007358342	AD - C	-2.680176	0.003679171
+RNA degradation	0.006032584	AD - C	-2.746005	0.003016292
+Sulfur relay system	4.516473e-06	AD - C	-4.586079	2.258237e-06
+Base excision repair	0.06621883	AD - C	1.836939	0.03310942
+DNA replication	0.6562268	AD - C	-0.4451287	0.3281134
+Fanconi anemia pathway	0.9178888	AD - C	0.1030934	0.4589444
+Homologous recombination	0.6359699	AD - C	-0.4733411	0.3179849
+Mismatch repair	0.003888515	AD - C	-2.887067	0.001944257
+Non-homologous end-joining	0.005775708	AD - C	2.76025	0.002887854
+Nucleotide excision repair	0.6630366	AD - C	0.4357245	0.3315183
+Basal transcription factors	0.5265956	AD - C	0.6332114	0.2632978
+RNA polymerase	0.9849941	AD - C	0.01880825	0.492497
+Spliceosome	0.2571881	AD - C	1.133062	0.1285941
+Aminoacyl-tRNA biosynthesis	0.6292767	AD - C	0.4827452	0.3146383
+RNA transport	7.314564e-09	AD - C	-5.783538	3.657282e-09
+Ribosome	0.6426929	AD - C	-0.4639369	0.3213465
+Ribosome biogenesis in eukaryotes	0.05830945	AD - C	1.893364	0.02915473
+mRNA surveillance pathway	0.9367689	AD - C	0.07933156	0.4683845
+Central carbon metabolism in cancer	0.0009856919	AD - C	3.294579	0.000492846
+Chemical carcinogenesis	0.4096962	AD - C	0.8244285	0.2048481
+Choline metabolism in cancer	0.7634663	AD - C	0.3009321	0.3817332
+MicroRNAs in cancer	0.2473918	AD - C	-1.156708	0.1236959
+Pathways in cancer	0.2879333	AD - C	-1.062666	0.1439666
+Proteoglycans in cancer	0.7515429	AD - C	-0.3166056	0.3757714
+Viral carcinogenesis	0.3767027	AD - C	-0.8839879	0.1883514
+Bladder cancer	0.4983433	AD - C	0.6770988	0.2491716
+Colorectal cancer	0.001963637	AD - C	3.095678	0.0009818186
+Gastric cancer	0.03737542	AD - C	2.081639	0.01868771
+Hepatocellular carcinoma	0.5876087	AD - C	0.5423047	0.2938043
+Prostate cancer	0.000436218	AD - C	-3.517143	0.000218109
+Renal cell carcinoma	0.402611	AD - C	0.8369673	0.2013055
+Small cell lung cancer	0.001963637	AD - C	3.095678	0.0009818186
+Arrhythmogenic right ventricular cardiomyopathy (ARVC)	0.7725213	AD - C	-0.2890785	0.3862607
+Dilated cardiomyopathy (DCM)	0.8176154	AD - C	-0.2306131	0.4088077
+Fluid shear stress and atherosclerosis	3.885286e-06	AD - C	-4.617426	1.942643e-06
+Hypertrophic cardiomyopathy (HCM)	0.8556674	AD - C	-0.1818921	0.4278337
+Viral myocarditis	0.001963637	AD - C	3.095678	0.0009818186
+Cationic antimicrobial peptide (CAMP) resistance	0.3973456	AD - C	-0.8463714	0.1986728
+Vancomycin resistance	0.2311278	AD - C	-1.197459	0.1155639
+beta-Lactam resistance	0.00597519	AD - C	2.74914	0.002987595
+Antifolate resistance	0.8385441	AD - C	0.2037561	0.4192721
+EGFR tyrosine kinase inhibitor resistance	0.9178888	AD - C	0.1030934	0.4589444
+Platinum drug resistance	0.2156382	AD - C	1.23821	0.1078191
+Cushing syndrome	0.402611	AD - C	0.8369673	0.2013055
+Insulin resistance	0.1292164	AD - C	-1.517199	0.06460821
+Non-alcoholic fatty liver disease (NAFLD)	0.003090913	AD - C	2.958549	0.001545457
+Type I diabetes mellitus	0.08245272	AD - C	1.736629	0.04122636
+Type II diabetes mellitus	0.3938585	AD - C	-0.8526408	0.1969293
+Primary immunodeficiency	0.442485	AD - C	-0.7680037	0.2212425
+Rheumatoid arthritis	0.6795947	AD - C	0.4130163	0.3397973
+Systemic lupus erythematosus	0.2189911	AD - C	1.229215	0.1094956
+Bacterial invasion of epithelial cells	0.4651533	AD - C	0.7303876	0.2325766
+Epithelial cell signaling in Helicobacter pylori infection	1.987069e-05	AD - C	-4.266339	9.935343e-06
+Legionellosis	0.2144784	AD - C	-1.241345	0.1072392
+Pathogenic Escherichia coli infection	0.2792505	AD - C	1.082004	0.1396253
+Pertussis	0.979993	AD - C	0.02507767	0.4899965
+Salmonella infection	0.0813514	AD - C	-1.742898	0.0406757
+Shigellosis	0.2696849	AD - C	1.103788	0.1348425
+Staphylococcus aureus infection	0.01825348	AD - C	2.360436	0.009126738
+Tuberculosis	0.3921219	AD - C	-0.8557755	0.196061
+Vibrio cholerae infection	0.433688	AD - C	0.7828962	0.216844
+African trypanosomiasis	0.001163997	AD - C	3.247558	0.0005819987
+Amoebiasis	0.2323512	AD - C	1.194324	0.1161756
+Chagas disease (American trypanosomiasis)	0.00111374	AD - C	3.260097	0.00055687
+Toxoplasmosis	5.509526e-05	AD - C	4.032889	2.754763e-05
+Epstein-Barr virus infection	0.9178888	AD - C	0.1030934	0.4589444
+Hepatitis B	0.002689381	AD - C	3.001177	0.001344691
+Hepatitis C	0.9178888	AD - C	0.1030934	0.4589444
+Herpes simplex virus 1 infection	0.005879677	AD - C	2.754417	0.002939838
+Human T-cell leukemia virus 1 infection	0.9178888	AD - C	0.1030934	0.4589444
+Human cytomegalovirus infection	0.001963637	AD - C	3.095678	0.0009818186
+Human papillomavirus infection	0.353473	AD - C	-0.9278739	0.1767365
+Influenza A	0.002689381	AD - C	3.001177	0.001344691
+Kaposi sarcoma-associated herpesvirus infection	0.001963637	AD - C	3.095678	0.0009818186
+Measles	0.9178888	AD - C	0.1030934	0.4589444
+Alzheimer disease	0.7184796	AD - C	0.3604915	0.3592398
+Amyotrophic lateral sclerosis (ALS)	0.03515882	AD - C	2.106524	0.01757941
+Huntington disease	0.1736832	AD - C	1.360464	0.08684162
+Parkinson disease	0.000749133	AD - C	3.370936	0.0003745665
+Prion diseases	0.2822829	AD - C	1.075205	0.1411414
+Alcoholism	0.002365	AD - C	3.040099	0.0011825
+Amphetamine addiction	0.002365	AD - C	3.040099	0.0011825
+Cocaine addiction	0.002365	AD - C	3.040099	0.0011825
+Alanine, aspartate and glutamate metabolism	0.1736832	AD - C	-1.360464	0.08684162
+Arginine and proline metabolism	0.4943752	AD - C	0.6833666	0.2471876
+Arginine biosynthesis	0.6928626	AD - C	-0.3949733	0.3464313
+Cysteine and methionine metabolism	0.2499634	AD - C	1.150438	0.1249817
+Glycine, serine and threonine metabolism	0.208747	AD - C	1.257018	0.1043735
+Histidine metabolism	0.9974989	AD - C	0.003134709	0.4987494
+Lysine biosynthesis	0.7373129	AD - C	0.3354139	0.3686565
+Lysine degradation	0.8828705	AD - C	0.1473313	0.4414353
+Phenylalanine metabolism	0.3112938	AD - C	-1.012511	0.1556469
+Phenylalanine, tyrosine and tryptophan biosynthesis	0.172694	AD - C	-1.363598	0.086347
+Tryptophan metabolism	0.04864022	AD - C	1.971732	0.02432011
+Tyrosine metabolism	0.01525514	AD - C	2.426265	0.007627569
+Valine, leucine and isoleucine biosynthesis	0.1493119	AD - C	1.441966	0.07465597
+Valine, leucine and isoleucine degradation	5.052638e-05	AD - C	4.053179	2.526319e-05
+Acarbose and validamycin biosynthesis	0.172694	AD - C	1.363598	0.086347
+Betalain biosynthesis	0.6630366	AD - C	0.4357245	0.3315183
+Biosynthesis of various secondary metabolites - part 1	3.602307e-06	AD - C	-4.6331	1.801153e-06
+Carbapenem biosynthesis	0.2525537	AD - C	-1.144169	0.1262768
+Flavone and flavonol biosynthesis	0.0001819503	AD - C	3.742842	9.097514e-05
+Flavonoid biosynthesis	0.2309532	AD - C	1.197907	0.1154766
+Glucosinolate biosynthesis	0.8927759	AD - C	0.1347925	0.446388
+Isoquinoline alkaloid biosynthesis	0.09600647	AD - C	1.66453	0.04800323
+Monobactam biosynthesis	0.01749627	AD - C	2.376109	0.008748137
+Neomycin, kanamycin and gentamicin biosynthesis	0.5790017	AD - C	0.5548435	0.2895009
+Novobiocin biosynthesis	0.3311701	AD - C	0.9717598	0.165585
+Penicillin and cephalosporin biosynthesis	0.005861878	AD - C	2.755409	0.002930939
+Phenazine biosynthesis	0.02582867	AD - C	-2.228778	0.01291434
+Phenylpropanoid biosynthesis	0.02069982	AD - C	2.313415	0.01034991
+Prodigiosin biosynthesis	0.001019191	AD - C	-3.285175	0.0005095953
+Staurosporine biosynthesis	0.09891709	AD - C	1.650126	0.04945854
+Stilbenoid, diarylheptanoid and gingerol biosynthesis	0.2309532	AD - C	1.197907	0.1154766
+Streptomycin biosynthesis	0.7091258	AD - C	0.3730304	0.3545629
+Tropane, piperidine and pyridine alkaloid biosynthesis	0.1668469	AD - C	1.382407	0.08342344
+Amino sugar and nucleotide sugar metabolism	0.001089371	AD - C	3.266367	0.0005446853
+Ascorbate and aldarate metabolism	0.04757602	AD - C	1.981136	0.02378801
+Butanoate metabolism	0.02776678	AD - C	-2.200566	0.01388339
+C5-Branched dibasic acid metabolism	0.003966704	AD - C	2.880798	0.001983352
+Citrate cycle (TCA cycle)	0.02710726	AD - C	2.20997	0.01355363
+Fructose and mannose metabolism	0.3869402	AD - C	0.8651797	0.1934701
+Galactose metabolism	0.0002035011	AD - C	3.71463	0.0001017506
+Glycolysis / Gluconeogenesis	2.853715e-05	AD - C	4.184836	1.426857e-05
+Glyoxylate and dicarboxylate metabolism	0.4518525	AD - C	0.7523302	0.2259263
+Inositol phosphate metabolism	0.0005911537	AD - C	3.435641	0.0002955769
+Pentose and glucuronate interconversions	0.003927432	AD - C	2.883932	0.001963716
+Pentose phosphate pathway	0.0006408756	AD - C	3.413698	0.0003204378
+Propanoate metabolism	0.2435693	AD - C	1.166112	0.1217846
+Pyruvate metabolism	0.02122202	AD - C	-2.304011	0.01061101
+Starch and sucrose metabolism	0.119245	AD - C	1.55795	0.05962251
+Biosynthesis of terpenoids and steroids	4.857554e-07	AD - C	5.031855	2.428777e-07
+Carbon fixation in photosynthetic organisms	0.6449405	AD - C	-0.4608022	0.3224703
+Carbon fixation pathways in prokaryotes	0.01486428	AD - C	-2.435669	0.007432142
+Methane metabolism	0.887821	AD - C	-0.1410619	0.4439105
+Nitrogen metabolism	0.0005263252	AD - C	-3.466988	0.0002631626
+Oxidative phosphorylation	0.06621883	AD - C	-1.836939	0.03310942
+Photosynthesis	0.004783869	AD - C	-2.821238	0.002391934
+Sulfur metabolism	0.2360491	AD - C	-1.18492	0.1180245
+2-Oxocarboxylic acid metabolism	0.4295589	AD - C	0.7899467	0.2147795
+Biosynthesis of amino acids	0.8385441	AD - C	-0.2037561	0.4192721
+Biosynthesis of secondary metabolites	0.101773	AD - C	-1.636318	0.05088652
+Carbon metabolism	0.7874796	AD - C	0.269585	0.3937398
+Degradation of aromatic compounds	0.6517027	AD - C	0.4513981	0.3258513
+Fatty acid metabolism	2.349084e-09	AD - C	-5.971621	1.174542e-09
+Metabolic pathways	0.002126192	AD - C	-3.072015	0.001063096
+Microbial metabolism in diverse environments	0.186931	AD - C	1.319712	0.09346552
+Glycosaminoglycan degradation	0.0001278237	AD - C	3.830614	6.391186e-05
+Glycosphingolipid biosynthesis - ganglio series	0.01720119	AD - C	2.382379	0.008600596
+Glycosphingolipid biosynthesis - globo and isoglobo series	0.05585408	AD - C	1.912172	0.02792704
+Glycosphingolipid biosynthesis - lacto and neolacto series	0.8006294	AD - C	-0.2525327	0.4003147
+Lipoarabinomannan (LAM) biosynthesis	0.1661017	AD - C	1.384839	0.08305083
+Lipopolysaccharide biosynthesis	0.8508119	AD - C	0.1880825	0.425406
+Mannose type O-glycan biosynthesis	9.886198e-06	AD - C	4.419648	4.943099e-06
+N-Glycan biosynthesis	0.7802532	AD - C	0.2789891	0.3901266
+Other glycan degradation	0.00105374	AD - C	3.275771	0.0005268701
+Other types of O-glycan biosynthesis	9.886198e-06	AD - C	4.419648	4.943099e-06
+Peptidoglycan biosynthesis	0.009358468	AD - C	-2.598674	0.004679234
+Various types of N-glycan biosynthesis	0.01579034	AD - C	2.413726	0.007895168
+Arachidonic acid metabolism	0.00105374	AD - C	-3.275771	0.0005268701
+Biosynthesis of unsaturated fatty acids	0.001298951	AD - C	-3.216211	0.0006494756
+Ether lipid metabolism	0.6382076	AD - C	0.4702063	0.3191038
+Fatty acid biosynthesis	7.423985e-05	AD - C	-3.962272	3.711993e-05
+Fatty acid degradation	0.1398237	AD - C	1.476448	0.06991184
+Glycerolipid metabolism	0.1827776	AD - C	-1.332251	0.09138881
+Glycerophospholipid metabolism	0.01968894	AD - C	-2.332223	0.009844469
+Linoleic acid metabolism	0.6836319	AD - C	0.4075122	0.3418159
+Primary bile acid biosynthesis	0.03739303	AD - C	2.081447	0.01869652
+Secondary bile acid biosynthesis	0.003888515	AD - C	2.887067	0.001944257
+Sphingolipid metabolism	0.09110295	AD - C	1.689608	0.04555147
+Steroid biosynthesis	3.091361e-07	AD - C	5.11779	1.545681e-07
+Steroid hormone biosynthesis	0.2435693	AD - C	1.166112	0.1217846
+Synthesis and degradation of ketone bodies	0.00059803	AD - C	-3.432506	0.000299015
+alpha-Linolenic acid metabolism	0.3852223	AD - C	0.8683144	0.1926111
+Biotin metabolism	0.0009321179	AD - C	-3.310253	0.000466059
+Folate biosynthesis	0.0185643	AD - C	-2.354166	0.009282149
+Lipoic acid metabolism	9.51206e-05	AD - C	3.902713	4.75603e-05
+Nicotinate and nicotinamide metabolism	0.7091258	AD - C	-0.3730304	0.3545629
+One carbon pool by folate	0.3127942	AD - C	-1.009376	0.1563971
+Pantothenate and CoA biosynthesis	0.004209911	AD - C	-2.861989	0.002104956
+Porphyrin and chlorophyll metabolism	2.738648e-09	AD - C	-5.946543	1.369324e-09
+Retinol metabolism	0.0002218969	AD - C	3.692687	0.0001109485
+Riboflavin metabolism	3.099524e-05	AD - C	-4.166028	1.549762e-05
+Thiamine metabolism	6.593846e-05	AD - C	-3.990485	3.296923e-05
+Ubiquinone and other terpenoid-quinone biosynthesis	0.09476121	AD - C	1.6708	0.04738061
+Vitamin B6 metabolism	0.300924	AD - C	1.034454	0.150462
+Cyanoamino acid metabolism	0.9151221	AD - C	0.1065801	0.4575611
+D-Alanine metabolism	0.541022	AD - C	0.6112682	0.270511
+D-Arginine and D-ornithine metabolism	0.02193612	AD - C	-2.291472	0.01096806
+D-Glutamine and D-glutamate metabolism	0.4632402	AD - C	-0.7335219	0.2316201
+Glutathione metabolism	0.890298	AD - C	0.1379272	0.445149
+Phosphonate and phosphinate metabolism	0.06393785	AD - C	1.852613	0.03196892
+Selenocompound metabolism	0.0001888834	AD - C	3.733438	9.444171e-05
+Taurine and hypotaurine metabolism	0.4096962	AD - C	0.8244285	0.2048481
+beta-Alanine metabolism	0.02582867	AD - C	-2.228778	0.01291434
+Biosynthesis of ansamycins	0.0005202204	AD - C	-3.470123	0.0002601102
+Biosynthesis of siderophore group nonribosomal peptides	0.3280599	AD - C	0.9780292	0.1640299
+Biosynthesis of type II polyketide products	0.007250195	AD - C	-2.685128	0.003625098
+Biosynthesis of vancomycin group antibiotics	0.0002246489	AD - C	3.689552	0.0001123245
+Carotenoid biosynthesis	0.0006944133	AD - C	3.391775	0.0003472066
+Geraniol degradation	0.4369182	AD - C	0.7774078	0.2184591
+Insect hormone biosynthesis	0.04722566	AD - C	1.984271	0.02361283
+Limonene and pinene degradation	0.06216013	AD - C	1.865152	0.03108006
+Nonribosomal peptide structures	0.9774928	AD - C	-0.02821238	0.4887464
+Polyketide sugar unit biosynthesis	0.2423044	AD - C	-1.169246	0.1211522
+Sesquiterpenoid and triterpenoid biosynthesis	7.402458e-07	AD - C	4.950496	3.701229e-07
+Terpenoid backbone biosynthesis	0.02689044	AD - C	-2.213105	0.01344522
+Tetracycline biosynthesis	0.3369423	AD - C	0.9602244	0.1684711
+Zeatin biosynthesis	0.3818004	AD - C	-0.8745838	0.1909002
+Purine metabolism	0.6315044	AD - C	0.4796105	0.3157522
+Pyrimidine metabolism	0.1736832	AD - C	-1.360464	0.08684162
+Aminobenzoate degradation	0.06260068	AD - C	1.862017	0.03130034
+Atrazine degradation	1	AD - C	0	0.5
+Benzoate degradation	0.001101493	AD - C	-3.263232	0.0005507465
+Bisphenol degradation	0.0008598882	AD - C	3.332761	0.0004299441
+Caprolactam degradation	0.5662035	AD - C	0.5736517	0.2831017
+Chloroalkane and chloroalkene degradation	0.006090473	AD - C	2.74287	0.003045236
+Chlorocyclohexane and chlorobenzene degradation	0.6471913	AD - C	0.4576675	0.3235957
+Dioxin degradation	0.0379701	AD - C	-2.075177	0.01898505
+Drug metabolism - cytochrome P450	0.03329835	AD - C	2.128467	0.01664918
+Drug metabolism - other enzymes	0.003278343	AD - C	-2.940357	0.001639171
+Ethylbenzene degradation	0.3311701	AD - C	0.9717598	0.165585
+Fluorobenzoate degradation	0.6382068	AD - C	0.4702075	0.3191034
+Furfural degradation	0.07414669	AD - C	1.785707	0.03707334
+Metabolism of xenobiotics by cytochrome P450	0.03382112	AD - C	2.122198	0.01691056
+Naphthalene degradation	0.001257021	AD - C	3.225616	0.0006285105
+Nitrotoluene degradation	0.162089	AD - C	1.39808	0.08104449
+Polycyclic aromatic hydrocarbon degradation	0.994989	AD - C	0.00628045	0.4974945
+Steroid degradation	0.2197104	AD - C	1.227299	0.1098552
+Styrene degradation	0.002287867	AD - C	3.050072	0.001143933
+Toluene degradation	0.3518488	AD - C	0.9310091	0.1759244
+Xylene degradation	0.1119933	AD - C	-1.589297	0.05599663
+Longevity regulating pathway	0.1602148	AD - C	1.40435	0.08010738
+Longevity regulating pathway - multiple species	0.02480336	AD - C	2.244452	0.01240168
+Longevity regulating pathway - worm	0.05625722	AD - C	1.909038	0.02812861
+Adrenergic signaling in cardiomyocytes	0.7146675	AD - C	-0.3655947	0.3573338
+Cardiac muscle contraction	0.1103227	AD - C	1.596744	0.05516135
+Bile secretion	0.01200962	AD - C	2.511861	0.006004812
+Carbohydrate digestion and absorption	0.09853626	AD - C	1.651992	0.04926813
+Mineral absorption	0.05748122	AD - C	-1.899634	0.02874061
+Pancreatic secretion	0.7146675	AD - C	-0.3655947	0.3573338
+Protein digestion and absorption	0.01565501	AD - C	2.416861	0.007827505
+Adipocytokine signaling pathway	0.1546904	AD - C	1.423158	0.0773452
+Estrogen signaling pathway	0.000436218	AD - C	-3.517143	0.000218109
+Glucagon signaling pathway	0.0004413983	AD - C	3.514009	0.0002206991
+Insulin secretion	0.7146675	AD - C	-0.3655947	0.3573338
+Insulin signaling pathway	0.002872073	AD - C	-2.981108	0.001436036
+Oxytocin signaling pathway	0.9234938	AD - C	0.09603369	0.4617469
+PPAR signaling pathway	0.5286445	AD - C	0.6300765	0.2643223
+Parathyroid hormone synthesis, secretion and action	0.008868816	AD - C	2.61707	0.004434408
+Progesterone-mediated oocyte maturation	0.000436218	AD - C	-3.517143	0.000218109
+Prolactin signaling pathway	0.02562073	AD - C	2.231913	0.01281036
+Renin secretion	0.2320334	AD - C	1.195137	0.1160167
+Renin-angiotensin system	0.4891851	AD - C	-0.6916055	0.2445925
+Thyroid hormone signaling pathway	0.02994263	AD - C	-2.170848	0.01497132
+Thyroid hormone synthesis	0.001463984	AD - C	-3.18173	0.0007319922
+Circadian entrainment	0.7146675	AD - C	-0.3655947	0.3573338
+Plant-pathogen interaction	1.770275e-08	AD - C	-5.633072	8.851375e-09
+Thermogenesis	0.5962743	AD - C	0.5297658	0.2981372
+Collecting duct acid secretion	0.6795947	AD - C	0.4130163	0.3397973
+Proximal tubule bicarbonate reclamation	0.01538742	AD - C	2.42313	0.007693709
+Vasopressin-regulated water reabsorption	0.102155	AD - C	-1.634495	0.05107751
+Antigen processing and presentation	0.000436218	AD - C	-3.517143	0.000218109
+IL-17 signaling pathway	0.000436218	AD - C	-3.517143	0.000218109
+NOD-like receptor signaling pathway	1.162446e-06	AD - C	-4.861934	5.812231e-07
+RIG-I-like receptor signaling pathway	0.6483178	AD - C	-0.4561004	0.3241589
+Th17 cell differentiation	0.000436218	AD - C	-3.517143	0.000218109
+Toll and Imd signaling pathway	0.5637051	AD - C	-0.577347	0.2818525
+Dopaminergic synapse	0.002365	AD - C	3.040099	0.0011825
+GABAergic synapse	0.1458064	AD - C	-1.454505	0.07290318
+Glutamatergic synapse	0.03252717	AD - C	-2.137872	0.01626359
+Retrograde endocannabinoid signaling	0.1170153	AD - C	1.567425	0.05850766
+Serotonergic synapse	0.002365	AD - C	3.040099	0.0011825
+Synaptic vesicle cycle	0.3606792	AD - C	-0.9140717	0.1803396

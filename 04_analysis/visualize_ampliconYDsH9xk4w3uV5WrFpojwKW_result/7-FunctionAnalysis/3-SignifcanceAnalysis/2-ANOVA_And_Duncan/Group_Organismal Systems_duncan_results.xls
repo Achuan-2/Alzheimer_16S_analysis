@@ -1,0 +1,5 @@
+"KEGG pathway"	"Group"	"Mean"	"SE"	"Duncan significance"
+"NOD-like receptor signaling pathway"	"AD"	-0.31895758402585	0.0629282187446809	"b"
+"NOD-like receptor signaling pathway"	"C"	0.449236033839225	0.0809610749548774	"a"
+"Plant-pathogen interaction"	"AD"	-0.355776368043251	0.0735181531338098	"b"
+"Plant-pathogen interaction"	"C"	0.501093476117255	0.063334470936905	"a"

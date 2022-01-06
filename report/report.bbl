@@ -1,0 +1,490 @@
+\begin{thebibliography}{10}
+\providecommand{\bibauthor}[1]{#1}
+\providecommand{\bibeditor}[1]{#1}
+\providecommand{\bibtranslator}[1]{#1}
+\providecommand{\bibtitle}[1]{#1}
+\providecommand{\bibbooktitle}[1]{#1}
+\providecommand{\bibjournal}[1]{#1}
+\providecommand{\bibmark}[1]{#1}
+\providecommand{\bibcountry}[1]{#1}
+\providecommand{\bibpatentid}[1]{#1}
+\providecommand{\bibedition}[1]{#1}
+\providecommand{\biborganization}[1]{#1}
+\providecommand{\bibaddress}[1]{#1}
+\providecommand{\bibpublisher}[1]{#1}
+\providecommand{\bibinstitution}[1]{#1}
+\providecommand{\bibschool}[1]{#1}
+\providecommand{\bibvolume}[1]{#1}
+\providecommand{\bibnumber}[1]{#1}
+\providecommand{\bibversion}[1]{#1}
+\providecommand{\bibpages}[1]{#1}
+\providecommand{\bibmodifydate}[1]{#1}
+\providecommand{\bibcitedate}[1]{#1}
+\providecommand{\bibyear}[1]{#1}
+\providecommand{\bibdate}[1]{#1}
+\providecommand{\biburl}[1]{\newline\url{#1}}
+
+\bibitem{Burnsb158}
+\bibauthor{BURNS A\@, ILIFFE S}\@. \bibtitle{Alzheimer{\textquoteright}s
+  disease}\bibmark{[J/OL]}\@. \bibjournal{BMJ}\@, \bibyear{2009}\@,
+  \bibvolume{338}\@. \newline\url{https://www.bmj.com/content/338/bmj.b158}\@.
+
+\bibitem{wenk2003neuropathologic}
+\bibauthor{WENK G~L\@, OTHERS}\@. \bibtitle{Neuropathologic changes in
+  Alzheimer's disease}\bibmark{[J]}\@. \bibjournal{Journal of Clinical
+  Psychiatry}\@, \bibyear{2003}\@, \bibvolume{64}\thinspace{}\textnormal{:
+  }\bibpages{7\thinspace{}\textnormal{--}\thinspace{}10}\@.
+
+\bibitem{tiraboschi2004importance}
+\bibauthor{TIRABOSCHI P\@, HANSEN L\@, THAL L, et~al}\@. \bibtitle{The
+  importance of neuritic plaques and tangles to the development and evolution
+  of AD}\bibmark{[J]}\@. \bibjournal{Neurology}\@, \bibyear{2004}\@,
+  \bibvolume{62}\bibnumber{(11)}\thinspace{}\textnormal{:
+  }\bibpages{1984\thinspace{}\textnormal{--}\thinspace{}1989}\@.
+
+\bibitem{hardy1991amyloid}
+\bibauthor{HARDY J\@, ALLSOP D}\@. \bibtitle{Amyloid deposition as the central
+  event in the aetiology of Alzheimer's disease}\bibmark{[J]}\@.
+  \bibjournal{Trends in pharmacological sciences}\@, \bibyear{1991}\@,
+  \bibvolume{12}\thinspace{}\textnormal{:
+  }\bibpages{383\thinspace{}\textnormal{--}\thinspace{}388}\@.
+
+\bibitem{goedert1991tau}
+\bibauthor{GOEDERT M\@, SPILLANTINI M\@, CROWTHER R}\@. \bibtitle{Tau proteins
+  and neurofibrillary degeneration}\bibmark{[J]}\@. \bibjournal{Brain
+  pathology}\@, \bibyear{1991}\@,
+  \bibvolume{1}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{279\thinspace{}\textnormal{--}\thinspace{}286}\@.
+
+\bibitem{wall2014bacterial}
+\bibauthor{WALL R\@, CRYAN J~F\@, ROSS R~P, et~al}\@. \bibtitle{Bacterial
+  neuroactive compounds produced by psychobiotics}\bibmark{[J]}\@.
+  \bibjournal{Microbial endocrinology: The microbiota-gut-brain axis in health
+  and disease}\@, \bibyear{2014}\thinspace{}\textnormal{:
+  }\bibpages{221\thinspace{}\textnormal{--}\thinspace{}239}\@.
+
+\bibitem{hsu2017primary}
+\bibauthor{HSU D\@, A~MARSHALL G}\@. \bibtitle{Primary and secondary prevention
+  trials in Alzheimer disease: looking back, moving forward}\bibmark{[J]}\@.
+  \bibjournal{Current Alzheimer Research}\@, \bibyear{2017}\@,
+  \bibvolume{14}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{426\thinspace{}\textnormal{--}\thinspace{}440}\@.
+
+\bibitem{gauthier2021world}
+\bibauthor{GAUTHIER S\@, ROSA-NETO P\@, MORAIS J, et~al}\@. \bibtitle{World
+  Alzheimer Report 2021: Journey through the diagnosis of
+  dementia}\bibmark{[J]}\@. \bibjournal{Alzheimer’s Disease International:
+  London, UK}\@, \bibyear{2021}\@.
+
+\bibitem{任汝静2021中国阿尔茨海默病报告}
+\bibauthor{任汝静\@, 殷鹏\@, 王志会, et~al}\@.
+  \bibtitle{中国阿尔茨海默病报告 2021}\bibmark{[J]}\@.
+  \bibjournal{诊断学理论与实践}\@, \bibyear{2021}\@,
+  \bibvolume{20}\bibnumber{(04)}\thinspace{}\textnormal{: }\bibpages{317}\@.
+
+\bibitem{la2018gut}
+\bibauthor{LA~ROSA F\@, CLERICI M\@, RATTO D, et~al}\@. \bibtitle{The gut-brain
+  axis in Alzheimer’s disease and omega-3. A critical overview of clinical
+  trials}\bibmark{[J]}\@. \bibjournal{Nutrients}\@, \bibyear{2018}\@,
+  \bibvolume{10}\bibnumber{(9)}\thinspace{}\textnormal{: }\bibpages{1267}\@.
+
+\bibitem{westfall2017microbiome}
+\bibauthor{WESTFALL S\@, LOMIS N\@, KAHOULI I, et~al}\@. \bibtitle{Microbiome,
+  probiotics and neurodegenerative diseases: deciphering the gut brain
+  axis}\bibmark{[J]}\@. \bibjournal{Cellular and molecular life sciences}\@,
+  \bibyear{2017}\@, \bibvolume{74}\bibnumber{(20)}\thinspace{}\textnormal{:
+  }\bibpages{3769\thinspace{}\textnormal{--}\thinspace{}3787}\@.
+
+\bibitem{mayer2015gut}
+\bibauthor{MAYER E~A\@, TILLISCH K\@, GUPTA A, et~al}\@. \bibtitle{Gut/brain
+  axis and the microbiota}\bibmark{[J]}\@. \bibjournal{The Journal of clinical
+  investigation}\@, \bibyear{2015}\@,
+  \bibvolume{125}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{926\thinspace{}\textnormal{--}\thinspace{}938}\@.
+
+\bibitem{zhuang2018gut}
+\bibauthor{ZHUANG Z-Q\@, SHEN L-L\@, LI W-W, et~al}\@. \bibtitle{Gut microbiota
+  is altered in patients with Alzheimer’s disease}\bibmark{[J]}\@.
+  \bibjournal{Journal of Alzheimer's disease}\@, \bibyear{2018}\@,
+  \bibvolume{63}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{1337\thinspace{}\textnormal{--}\thinspace{}1346}\@.
+
+\bibitem{vogt2017gut}
+\bibauthor{VOGT N~M\@, KERBY R~L\@, DILL-MCFARLAND K~A, et~al}\@. \bibtitle{Gut
+  microbiome alterations in Alzheimer’s disease}\bibmark{[J]}\@.
+  \bibjournal{Scientific reports}\@, \bibyear{2017}\@,
+  \bibvolume{7}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}11}\@.
+
+\bibitem{zhang2017altered}
+\bibauthor{ZHANG L\@, WANG Y\@, XIAYU X, et~al}\@. \bibtitle{Altered gut
+  microbiota in a mouse model of Alzheimer’s disease}\bibmark{[J]}\@.
+  \bibjournal{Journal of Alzheimer's disease}\@, \bibyear{2017}\@,
+  \bibvolume{60}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{1241\thinspace{}\textnormal{--}\thinspace{}1257}\@.
+
+\bibitem{zhao2015microbiome}
+\bibauthor{ZHAO Y\@, LUKIW W~J}\@. \bibtitle{Microbiome-generated amyloid and
+  potential impact on amyloidogenesis in Alzheimer’s disease
+  (AD)}\bibmark{[J]}\@. \bibjournal{Journal of nature and science}\@,
+  \bibyear{2015}\@, \bibvolume{1}\bibnumber{(7)}\@.
+
+\bibitem{zhang2009circulating}
+\bibauthor{ZHANG R\@, MILLER R~G\@, GASCON R, et~al}\@. \bibtitle{Circulating
+  endotoxin and systemic immune activation in sporadic amyotrophic lateral
+  sclerosis (sALS)}\bibmark{[J]}\@. \bibjournal{Journal of neuroimmunology}\@,
+  \bibyear{2009}\@, \bibvolume{206}\bibnumber{(1-2)}\thinspace{}\textnormal{:
+  }\bibpages{121\thinspace{}\textnormal{--}\thinspace{}124}\@.
+
+\bibitem{jaeger2009lipopolysaccharide}
+\bibauthor{JAEGER L~B\@, DOHGU S\@, SULTANA R, et~al}\@.
+  \bibtitle{Lipopolysaccharide alters the blood--brain barrier transport of
+  amyloid $\beta$ protein: a mechanism for inflammation in the progression of
+  Alzheimer’s disease}\bibmark{[J]}\@. \bibjournal{Brain, behavior, and
+  immunity}\@, \bibyear{2009}\@,
+  \bibvolume{23}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{507\thinspace{}\textnormal{--}\thinspace{}517}\@.
+
+\bibitem{barrett2012gamma}
+\bibauthor{BARRETT E\@, ROSS R\@, O'TOOLE P~W, et~al}\@.
+  \bibtitle{$\gamma$-Aminobutyric acid production by culturable bacteria from
+  the human intestine}\bibmark{[J]}\@. \bibjournal{Journal of applied
+  microbiology}\@, \bibyear{2012}\@,
+  \bibvolume{113}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{411\thinspace{}\textnormal{--}\thinspace{}417}\@.
+
+\bibitem{lyte2011probiotics}
+\bibauthor{LYTE M}\@. \bibtitle{Probiotics function mechanistically as delivery
+  vehicles for neuroactive compounds: microbial endocrinology in the design and
+  use of probiotics}\bibmark{[J]}\@. \bibjournal{Bioessays}\@,
+  \bibyear{2011}\@, \bibvolume{33}\bibnumber{(8)}\thinspace{}\textnormal{:
+  }\bibpages{574\thinspace{}\textnormal{--}\thinspace{}581}\@.
+
+\bibitem{von2017effect}
+\bibauthor{VON~LINSTOW C\@, SEVERINO M\@, METAXAS A, et~al}\@. \bibtitle{Effect
+  of aging and Alzheimer's disease-like pathology on brain monoamines in
+  mice}\bibmark{[J]}\@. \bibjournal{Neurochemistry international}\@,
+  \bibyear{2017}\@, \bibvolume{108}\thinspace{}\textnormal{:
+  }\bibpages{238\thinspace{}\textnormal{--}\thinspace{}245}\@.
+
+\bibitem{sanborn2018randomized}
+\bibauthor{SANBORN V\@, AZCARATE-PERIL M~A\@, UPDEGRAFF J, et~al}\@.
+  \bibtitle{A randomized clinical trial examining the impact of LGG probiotic
+  supplementation on psychological status in middle-aged and older
+  adults}\bibmark{[J]}\@. \bibjournal{Contemporary clinical trials
+  communications}\@, \bibyear{2018}\@, \bibvolume{12}\thinspace{}\textnormal{:
+  }\bibpages{192\thinspace{}\textnormal{--}\thinspace{}197}\@.
+
+\bibitem{akbari2016effect}
+\bibauthor{AKBARI E\@, ASEMI Z\@, DANESHVAR~KAKHAKI R, et~al}\@.
+  \bibtitle{Effect of probiotic supplementation on cognitive function and
+  metabolic status in Alzheimer's disease: a randomized, double-blind and
+  controlled trial}\bibmark{[J]}\@. \bibjournal{Frontiers in aging
+  neuroscience}\@, \bibyear{2016}\@, \bibvolume{8}\thinspace{}\textnormal{:
+  }\bibpages{256}\@.
+
+\bibitem{data}
+\bibauthor{LING Z\@, ZHU M\@, YAN X, et~al}\@. \bibtitle{Structural and
+  Functional Dysbiosis of Fecal Microbiota in Chinese Patients With Alzheimer's
+  Disease}\bibmark{[J]}\@. \bibjournal{Frontiers in Cell and Developmental
+  Biology}\@, \bibyear{2021}\@, \bibvolume{8}\thinspace{}\textnormal{:
+  }\bibpages{1891}\@.
+
+\bibitem{leinonen2010sequence}
+\bibauthor{LEINONEN R\@, SUGAWARA H\@, SHUMWAY M, et~al}\@. \bibtitle{The
+  sequence read archive}\bibmark{[J]}\@. \bibjournal{Nucleic acids research}\@,
+  \bibyear{2010}\@,
+  \bibvolume{39}\bibnumber{(suppl\_1)}\thinspace{}\textnormal{:
+  }\bibpages{D19\thinspace{}\textnormal{--}\thinspace{}D21}\@.
+
+\bibitem{ranjan2016analysis}
+\bibauthor{RANJAN R\@, RANI A\@, METWALLY A, et~al}\@. \bibtitle{Analysis of
+  the microbiome: Advantages of whole genome shotgun versus 16S amplicon
+  sequencing}\bibmark{[J]}\@. \bibjournal{Biochemical and biophysical research
+  communications}\@, \bibyear{2016}\@,
+  \bibvolume{469}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{967\thinspace{}\textnormal{--}\thinspace{}977}\@.
+
+\bibitem{johnson2019evaluation}
+\bibauthor{JOHNSON J~S\@, SPAKOWICZ D~J\@, HONG B-Y, et~al}\@.
+  \bibtitle{Evaluation of 16S rRNA gene sequencing for species and strain-level
+  microbiome analysis}\bibmark{[J]}\@. \bibjournal{Nature communications}\@,
+  \bibyear{2019}\@, \bibvolume{10}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}11}\@.
+
+\bibitem{gray1984evolutionary}
+\bibauthor{GRAY M~W\@, SANKOFF D\@, CEDERGREN R~J}\@. \bibtitle{On the
+  evolutionary descent of organisms and organelles: a global phylogeny based on
+  a highly conserved structural core in small subunit ribosomal
+  RNA}\bibmark{[J]}\@. \bibjournal{Nucleic Acids Research}\@, \bibyear{1984}\@,
+  \bibvolume{12}\bibnumber{(14)}\thinspace{}\textnormal{:
+  }\bibpages{5837\thinspace{}\textnormal{--}\thinspace{}5852}\@.
+
+\bibitem{qiime2}
+\bibauthor{BOLYEN E\@, RIDEOUT J~R\@, DILLON M~R, et~al}\@.
+  \bibtitle{Reproducible, interactive, scalable and extensible microbiome data
+  science using QIIME 2}\bibmark{[J]}\@. \bibjournal{Nature biotechnology}\@,
+  \bibyear{2019}\@, \bibvolume{37}\bibnumber{(8)}\thinspace{}\textnormal{:
+  }\bibpages{852\thinspace{}\textnormal{--}\thinspace{}857}\@.
+
+\bibitem{ewels2016multiqc}
+\bibauthor{EWELS P\@, MAGNUSSON M\@, LUNDIN S, et~al}\@. \bibtitle{MultiQC:
+  summarize analysis results for multiple tools and samples in a single
+  report}\bibmark{[J]}\@. \bibjournal{Bioinformatics}\@, \bibyear{2016}\@,
+  \bibvolume{32}\bibnumber{(19)}\thinspace{}\textnormal{:
+  }\bibpages{3047\thinspace{}\textnormal{--}\thinspace{}3048}\@.
+
+\bibitem{cutadapt}
+\bibauthor{MARTIN M}\@. \bibtitle{Cutadapt removes adapter sequences from
+  high-throughput sequencing reads}\bibmark{[J]}\@. \bibjournal{EMBnet.
+  journal}\@, \bibyear{2011}\@,
+  \bibvolume{17}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{10\thinspace{}\textnormal{--}\thinspace{}12}\@.
+
+\bibitem{dada2}
+\bibauthor{CALLAHAN B~J\@, MCMURDIE P~J\@, ROSEN M~J, et~al}\@.
+  \bibtitle{DADA2: high-resolution sample inference from Illumina amplicon
+  data}\bibmark{[J]}\@. \bibjournal{Nature methods}\@, \bibyear{2016}\@,
+  \bibvolume{13}\bibnumber{(7)}\thinspace{}\textnormal{:
+  }\bibpages{581\thinspace{}\textnormal{--}\thinspace{}583}\@.
+
+\bibitem{silva}
+\bibauthor{QUAST C\@, PRUESSE E\@, YILMAZ P, et~al}\@. \bibtitle{The SILVA
+  ribosomal RNA gene database project: improved data processing and web-based
+  tools}\bibmark{[J]}\@. \bibjournal{Nucleic acids research}\@,
+  \bibyear{2012}\@, \bibvolume{41}\bibnumber{(D1)}\thinspace{}\textnormal{:
+  }\bibpages{D590\thinspace{}\textnormal{--}\thinspace{}D596}\@.
+
+\bibitem{chao1984}
+\bibauthor{CHAO A}\@. \bibtitle{Nonparametric estimation of the number of
+  classes in a population}\bibmark{[J]}\@. \bibjournal{Scandinavian Journal of
+  statistics}\@, \bibyear{1984}\thinspace{}\textnormal{:
+  }\bibpages{265\thinspace{}\textnormal{--}\thinspace{}270}\@.
+
+\bibitem{ACE}
+\bibauthor{CHAO A\@, LEE S-M}\@. \bibtitle{Estimating the number of classes via
+  sample coverage}\bibmark{[J]}\@. \bibjournal{Journal of the American
+  statistical Association}\@, \bibyear{1992}\@,
+  \bibvolume{87}\bibnumber{(417)}\thinspace{}\textnormal{:
+  }\bibpages{210\thinspace{}\textnormal{--}\thinspace{}217}\@.
+
+\bibitem{shannon}
+\bibauthor{SPELLERBERG I~F\@, FEDOR P~J}\@. \bibtitle{A tribute to Claude
+  Shannon (1916--2001) and a plea for more rigorous use of species richness,
+  species diversity and the ‘Shannon--Wiener’Index}\bibmark{[J]}\@.
+  \bibjournal{Global ecology and biogeography}\@, \bibyear{2003}\@,
+  \bibvolume{12}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{177\thinspace{}\textnormal{--}\thinspace{}179}\@.
+
+\bibitem{simpson}
+\bibauthor{SIMPSON E~H}\@. \bibtitle{Measurement of diversity}\bibmark{[J]}\@.
+  \bibjournal{nature}\@, \bibyear{1949}\@,
+  \bibvolume{163}\bibnumber{(4148)}\thinspace{}\textnormal{:
+  }\bibpages{688\thinspace{}\textnormal{--}\thinspace{}688}\@.
+
+\bibitem{mcmurdie2013phyloseq}
+\bibauthor{MCMURDIE P~J\@, HOLMES S}\@. \bibtitle{phyloseq: an R package for
+  reproducible interactive analysis and graphics of microbiome census
+  data}\bibmark{[J]}\@. \bibjournal{PloS one}\@, \bibyear{2013}\@,
+  \bibvolume{8}\bibnumber{(4)}\thinspace{}\textnormal{: }\bibpages{e61217}\@.
+
+\bibitem{wilcoxon}
+\bibauthor{WILCOXON F}\@. \bibtitle{Individual comparisons by ranking
+  methods}\bibmark{[G]} //\thinspace{}\bibbooktitle{Breakthroughs in
+  statistics}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{Springer}\@, \bibyear{1992}\thinspace{}\textnormal{:
+  }\bibpages{196\thinspace{}\textnormal{--}\thinspace{}202}\@.
+
+\bibitem{jaccard}
+\bibauthor{JACCARD P}\@. \bibtitle{The distribution of the flora in the alpine
+  zone. 1}\bibmark{[J]}\@. \bibjournal{New phytologist}\@, \bibyear{1912}\@,
+  \bibvolume{11}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{37\thinspace{}\textnormal{--}\thinspace{}50}\@.
+
+\bibitem{bray}
+\bibauthor{BRAY J~R\@, CURTIS J~T}\@. \bibtitle{An ordination of the upland
+  forest communities of southern Wisconsin}\bibmark{[J]}\@.
+  \bibjournal{Ecological monographs}\@, \bibyear{1957}\@,
+  \bibvolume{27}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{326\thinspace{}\textnormal{--}\thinspace{}349}\@.
+
+\bibitem{unifrac}
+\bibauthor{LOZUPONE C~A\@, HAMADY M\@, KELLEY S~T, et~al}\@.
+  \bibtitle{Quantitative and qualitative $\beta$ diversity measures lead to
+  different insights into factors that structure microbial
+  communities}\bibmark{[J]}\@. \bibjournal{Applied and environmental
+  microbiology}\@, \bibyear{2007}\@,
+  \bibvolume{73}\bibnumber{(5)}\thinspace{}\textnormal{:
+  }\bibpages{1576\thinspace{}\textnormal{--}\thinspace{}1585}\@.
+
+\bibitem{pcoa}
+\bibauthor{ANDERSON M~J\@, WILLIS T~J}\@. \bibtitle{Canonical analysis of
+  principal coordinates: a useful method of constrained ordination for
+  ecology}\bibmark{[J]}\@. \bibjournal{Ecology}\@, \bibyear{2003}\@,
+  \bibvolume{84}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{511\thinspace{}\textnormal{--}\thinspace{}525}\@.
+
+\bibitem{anderson2001new}
+\bibauthor{ANDERSON M~J}\@. \bibtitle{A new method for non-parametric
+  multivariate analysis of variance}\bibmark{[J]}\@. \bibjournal{Austral
+  ecology}\@, \bibyear{2001}\@,
+  \bibvolume{26}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{32\thinspace{}\textnormal{--}\thinspace{}46}\@.
+
+\bibitem{oksanen2007vegan}
+\bibauthor{OKSANEN J\@, KINDT R\@, LEGENDRE P, et~al}\@. \bibtitle{The vegan
+  package}\bibmark{[J]}\@. \bibjournal{Community ecology package}\@,
+  \bibyear{2007}\@,
+  \bibvolume{10}\bibnumber{(631-637)}\thinspace{}\textnormal{:
+  }\bibpages{719}\@.
+
+\bibitem{lefse}
+\bibauthor{SEGATA N\@, IZARD J\@, WALDRON L, et~al}\@. \bibtitle{Metagenomic
+  biomarker discovery and explanation}\bibmark{[J]}\@. \bibjournal{Genome
+  biology}\@, \bibyear{2011}\@,
+  \bibvolume{12}\bibnumber{(6)}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}18}\@.
+
+\bibitem{liaw2002classification}
+\bibauthor{LIAW A\@, WIENER M\@, OTHERS}\@. \bibtitle{Classification and
+  regression by randomForest}\bibmark{[J]}\@. \bibjournal{R news}\@,
+  \bibyear{2002}\@, \bibvolume{2}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{18\thinspace{}\textnormal{--}\thinspace{}22}\@.
+
+\bibitem{kolde2015package}
+\bibauthor{KOLDE R\@, KOLDE M~R}\@. \bibtitle{Package
+  ‘pheatmap’}\bibmark{[J]}\@. \bibjournal{R package}\@, \bibyear{2015}\@,
+  \bibvolume{1}\bibnumber{(7)}\thinspace{}\textnormal{: }\bibpages{790}\@.
+
+\bibitem{douglas2020picrust2}
+\bibauthor{DOUGLAS G~M\@, MAFFEI V~J\@, ZANEVELD J~R, et~al}\@.
+  \bibtitle{PICRUSt2 for prediction of metagenome functions}\bibmark{[J]}\@.
+  \bibjournal{Nature Biotechnology}\@, \bibyear{2020}\@,
+  \bibvolume{38}\bibnumber{(6)}\thinspace{}\textnormal{:
+  }\bibpages{685\thinspace{}\textnormal{--}\thinspace{}688}\@.
+
+\bibitem{kanehisa2000kegg}
+\bibauthor{KANEHISA M\@, GOTO S}\@. \bibtitle{KEGG: kyoto encyclopedia of genes
+  and genomes}\bibmark{[J]}\@. \bibjournal{Nucleic acids research}\@,
+  \bibyear{2000}\@, \bibvolume{28}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{27\thinspace{}\textnormal{--}\thinspace{}30}\@.
+
+\bibitem{parks2014stamp}
+\bibauthor{PARKS D~H\@, TYSON G~W\@, HUGENHOLTZ P, et~al}\@. \bibtitle{STAMP:
+  statistical analysis of taxonomic and functional profiles}\bibmark{[J]}\@.
+  \bibjournal{Bioinformatics}\@, \bibyear{2014}\@,
+  \bibvolume{30}\bibnumber{(21)}\thinspace{}\textnormal{:
+  }\bibpages{3123\thinspace{}\textnormal{--}\thinspace{}3124}\@.
+
+\bibitem{zhuang22018gut}
+\bibauthor{ZHUANG Z-Q\@, SHEN L-L\@, LI W-W, et~al}\@. \bibtitle{Gut microbiota
+  is altered in patients with Alzheimer’s disease}\bibmark{[J]}\@.
+  \bibjournal{Journal of Alzheimer's disease}\@, \bibyear{2018}\@,
+  \bibvolume{63}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{1337\thinspace{}\textnormal{--}\thinspace{}1346}\@.
+
+\bibitem{liu2019altered}
+\bibauthor{LIU P\@, WU L\@, PENG G, et~al}\@. \bibtitle{Altered microbiomes
+  distinguish Alzheimer’s disease from amnestic mild cognitive impairment and
+  health in a Chinese cohort}\bibmark{[J]}\@. \bibjournal{Brain, behavior, and
+  immunity}\@, \bibyear{2019}\@, \bibvolume{80}\thinspace{}\textnormal{:
+  }\bibpages{633\thinspace{}\textnormal{--}\thinspace{}643}\@.
+
+\bibitem{fung2017interactions}
+\bibauthor{FUNG T~C\@, OLSON C~A\@, HSIAO E~Y}\@. \bibtitle{Interactions
+  between the microbiota, immune and nervous systems in health and
+  disease}\bibmark{[J]}\@. \bibjournal{Nature neuroscience}\@,
+  \bibyear{2017}\@, \bibvolume{20}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{145\thinspace{}\textnormal{--}\thinspace{}155}\@.
+
+\bibitem{camfield2011dairy}
+\bibauthor{CAMFIELD D~A\@, OWEN L\@, SCHOLEY A~B, et~al}\@. \bibtitle{Dairy
+  constituents and neurocognitive health in ageing}\bibmark{[J]}\@.
+  \bibjournal{British journal of nutrition}\@, \bibyear{2011}\@,
+  \bibvolume{106}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{159\thinspace{}\textnormal{--}\thinspace{}174}\@.
+
+\bibitem{kobayashi2017therapeutic}
+\bibauthor{KOBAYASHI Y\@, SUGAHARA H\@, SHIMADA K, et~al}\@.
+  \bibtitle{Therapeutic potential of Bifidobacterium breve strain A1 for
+  preventing cognitive impairment in Alzheimer’s disease}\bibmark{[J]}\@.
+  \bibjournal{Scientific reports}\@, \bibyear{2017}\@,
+  \bibvolume{7}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}10}\@.
+
+\bibitem{ottman2017genome}
+\bibauthor{OTTMAN N\@, DAVIDS M\@, SUAREZ-DIEZ M, et~al}\@.
+  \bibtitle{Genome-scale model and omics analysis of metabolic capacities of
+  Akkermansia muciniphila reveal a preferential mucin-degrading
+  lifestyle}\bibmark{[J]}\@. \bibjournal{Applied and environmental
+  microbiology}\@, \bibyear{2017}\@,
+  \bibvolume{83}\bibnumber{(18)}\thinspace{}\textnormal{:
+  }\bibpages{e01014\thinspace{}\textnormal{--}\thinspace{}17}\@.
+
+\bibitem{everard2013cross}
+\bibauthor{EVERARD A\@, BELZER C\@, GEURTS L, et~al}\@. \bibtitle{Cross-talk
+  between Akkermansia muciniphila and intestinal epithelium controls
+  diet-induced obesity}\bibmark{[J]}\@. \bibjournal{Proceedings of the national
+  academy of sciences}\@, \bibyear{2013}\@,
+  \bibvolume{110}\bibnumber{(22)}\thinspace{}\textnormal{:
+  }\bibpages{9066\thinspace{}\textnormal{--}\thinspace{}9071}\@.
+
+\bibitem{greer2016akkermansia}
+\bibauthor{GREER R~L\@, DONG X\@, MORAES A~C~F, et~al}\@. \bibtitle{Akkermansia
+  muciniphila mediates negative effects of IFN$\gamma$ on glucose
+  metabolism}\bibmark{[J]}\@. \bibjournal{Nature communications}\@,
+  \bibyear{2016}\@, \bibvolume{7}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}13}\@.
+
+\bibitem{sokol2008faecalibacterium}
+\bibauthor{SOKOL H\@, PIGNEUR B\@, WATTERLOT L, et~al}\@.
+  \bibtitle{Faecalibacterium prausnitzii is an anti-inflammatory commensal
+  bacterium identified by gut microbiota analysis of Crohn disease
+  patients}\bibmark{[J]}\@. \bibjournal{Proceedings of the National Academy of
+  Sciences}\@, \bibyear{2008}\@,
+  \bibvolume{105}\bibnumber{(43)}\thinspace{}\textnormal{:
+  }\bibpages{16731\thinspace{}\textnormal{--}\thinspace{}16736}\@.
+
+\bibitem{scheperjans2015gut}
+\bibauthor{SCHEPERJANS F\@, AHO V\@, PEREIRA P~A, et~al}\@. \bibtitle{Gut
+  microbiota are related to Parkinson's disease and clinical
+  phenotype}\bibmark{[J]}\@. \bibjournal{Movement Disorders}\@,
+  \bibyear{2015}\@, \bibvolume{30}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{350\thinspace{}\textnormal{--}\thinspace{}358}\@.
+
+\bibitem{tamanai2017roseburia}
+\bibauthor{TAMANAI-SHACOORI Z\@, SMIDA I\@, BOUSARGHIN L, et~al}\@.
+  \bibtitle{Roseburia spp.: a marker of health?}\bibmark{[J]}\@.
+  \bibjournal{Future microbiology}\@, \bibyear{2017}\@,
+  \bibvolume{12}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{157\thinspace{}\textnormal{--}\thinspace{}170}\@.
+
+\bibitem{reichardt2018specific}
+\bibauthor{REICHARDT N\@, VOLLMER M\@, HOLTROP G, et~al}\@. \bibtitle{Specific
+  substrate-driven changes in human faecal microbiota composition contrast with
+  functional redundancy in short-chain fatty acid production}\bibmark{[J]}\@.
+  \bibjournal{The ISME journal}\@, \bibyear{2018}\@,
+  \bibvolume{12}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{610\thinspace{}\textnormal{--}\thinspace{}622}\@.
+
+\bibitem{valles2019neuroactive}
+\bibauthor{VALLES-COLOMER M\@, FALONY G\@, DARZI Y, et~al}\@. \bibtitle{The
+  neuroactive potential of the human gut microbiota in quality of life and
+  depression}\bibmark{[J]}\@. \bibjournal{Nature microbiology}\@,
+  \bibyear{2019}\@, \bibvolume{4}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{623\thinspace{}\textnormal{--}\thinspace{}632}\@.
+
+\bibitem{wang2019sodium}
+\bibauthor{WANG X\@, SUN G\@, FENG T, et~al}\@. \bibtitle{Sodium oligomannate
+  therapeutically remodels gut microbiota and suppresses gut bacterial amino
+  acids-shaped neuroinflammation to inhibit Alzheimer’s disease
+  progression}\bibmark{[J]}\@. \bibjournal{Cell research}\@, \bibyear{2019}\@,
+  \bibvolume{29}\bibnumber{(10)}\thinspace{}\textnormal{:
+  }\bibpages{787\thinspace{}\textnormal{--}\thinspace{}803}\@.
+
+\bibitem{cryan2019microbiota}
+\bibauthor{CRYAN J~F\@, O'RIORDAN K~J\@, COWAN C~S, et~al}\@. \bibtitle{The
+  microbiota-gut-brain axis}\bibmark{[J]}\@. \bibjournal{Physiological
+  reviews}\@, \bibyear{2019}\@.
+
+\end{thebibliography}
